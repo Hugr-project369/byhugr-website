@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects for the hugr site.
+# Serves clean paths from the single index.html with a 200, so the router can read them.
+/waitlist   /index.html   200
+/download   /index.html   200
+/privacy    /index.html   200
+/support    /index.html   200
+/card       /index.html   200
+/*          /index.html   200
