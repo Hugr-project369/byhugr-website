@@ -67,7 +67,14 @@
 
   :root {
     --ground: #0a0a0f;
-    --ground2: #181824;
+    --ground2: #181824;          /* the peak of the pool below */
+    --ground2rgb: 24, 24, 36;
+    /* The second ground arrives as a pool of light, not a painted wall: it fades to
+       nothing before the section ends, so no seam is ever drawn as an edge. */
+    --pool: radial-gradient(ellipse 70% 60% at 50% 50%,
+            rgba(var(--ground2rgb), 1) 0%,
+            rgba(var(--ground2rgb), .55) 58%,
+            rgba(var(--ground2rgb), 0) 86%);
     --gold: #c9a96e;
     --warm: #e8e4dc;
     --g06: rgba(201,169,110,.06);
@@ -251,8 +258,8 @@
   .faq details[open] { background: var(--g06); }
   .faq details[open] summary, .faq details[open] .a { padding-left: .8rem; padding-right: .8rem; }
 
-  .cta { text-align: center; padding: 5rem 1.5rem 6rem; background: var(--ground2); }
-  section.block.story-block { background: var(--ground2); }
+  .cta { text-align: center; padding: 5rem 1.5rem 6rem; background: var(--pool); }
+  section.block.story-block { background: var(--pool); }
   .cta h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--gold); margin: 0 0 .6rem; }
   .cta .tag { font-family: var(--serif); font-style: italic; color: var(--warm); opacity: .8; font-size: 1.15rem; letter-spacing: .06em; margin: 0 0 2rem; }
 
