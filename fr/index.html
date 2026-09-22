@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-stage="waitlist">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>hugr. Un compagnon qui vous rencontre tel que vous êtes.</title>
-<meta name="description" content="hugr est un compagnon IA qui vous rencontre tel que vous êtes. Pour vous retrouver, sous tout ce que vous portez. Pour adultes. Bientôt sur iPhone et Android.">
+<meta name="description" content="hugr est un compagnon IA qui vous rencontre tel que vous êtes. Pour faire taire le bruit et vous voir à nouveau. Pour adultes. Bientôt sur iPhone et Android.">
 
 <link rel="canonical" href="https://byhugr.io/fr/">
 <link rel="alternate" hreflang="fr" href="https://byhugr.io/fr/">
 <link rel="alternate" hreflang="en" href="https://byhugr.io/">
 <link rel="alternate" hreflang="x-default" href="https://byhugr.io/">
 <meta name="theme-color" content="#0a0a0f">
+<!-- Marks the page as scripted before anything paints, so the conversation
+     below can sit in the markup and still animate. No script, no class,
+     and the finished conversation simply stays on screen. -->
+<script>document.documentElement.className += ' js';</script>
 
 <!-- Icons: the same files as the English page, at the site root. -->
-<link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="hugr">
 
 <!-- Social preview (og-fr.png is supplied, 1200x630; upload it at the site root). -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="hugr">
 <meta property="og:locale" content="fr_BE">
+<meta property="og:locale:alternate" content="en_GB">
 <meta property="og:url" content="https://byhugr.io/fr/">
 <meta property="og:title" content="hugr. Un compagnon qui vous rencontre tel que vous êtes.">
-<meta property="og:description" content="Pour vous retrouver, sous tout ce que vous portez. Un compagnon IA pour adultes. Bientôt sur iPhone et Android.">
+<meta property="og:description" content="Pour faire taire le bruit et vous voir à nouveau. Un compagnon IA pour adultes. Bientôt sur iPhone et Android.">
 <meta property="og:image" content="https://byhugr.io/og-fr.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="hugr. Un compagnon qui vous rencontre tel que vous êtes.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="hugr. Un compagnon qui vous rencontre tel que vous êtes.">
-<meta name="twitter:description" content="Pour vous retrouver, sous tout ce que vous portez. Un compagnon IA pour adultes.">
+<meta name="twitter:description" content="Pour faire taire le bruit et vous voir à nouveau. Un compagnon IA pour adultes.">
 <meta name="twitter:image" content="https://byhugr.io/og-fr.png">
 
 <!--
@@ -57,6 +65,7 @@
 
   :root {
     --ground: #0a0a0f;
+    --ground2: #181824;
     --gold: #c9a96e;
     --warm: #e8e4dc;
     --g06: rgba(201,169,110,.06);
@@ -68,7 +77,7 @@
     --faint: rgba(232,228,220,.72);
     --w82: rgba(232,228,220,.82);
     --w72: rgba(232,228,220,.72);
-    --w50: rgba(232,228,220,.50);
+    --w50: rgba(232,228,220,.58);
     --paper: #f1eee8;
     --paper2: #f8f6f2;
     --ink: #0a0a0f;
@@ -85,6 +94,10 @@
   a { color: inherit; }
   ::selection { background: var(--g30); }
 
+  /* one focus treatment for the whole site, keyboard only */
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .doc .panel :focus-visible { outline-color: var(--goldink); }
+
   /* ---------- nav ---------- */
   nav { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--g15); background: rgba(10,10,15,.85); backdrop-filter: blur(10px); }
   .mark { font-family: var(--serif); font-weight: 300; font-size: 1.55rem; letter-spacing: .15em; color: var(--warm); text-decoration: none; }
@@ -100,18 +113,24 @@
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
 
   /* ---------- hero ---------- */
-  .hero { text-align: center; padding: 5.5rem 1.5rem 4.5rem; }
+  /* the light from an open door, just above the wordmark */
+  .hero { text-align: center; padding: 5.5rem 1.5rem 4.5rem;
+          background: radial-gradient(ellipse 58% 34% at 50% 7%,
+                      rgba(201,169,110,.17), rgba(201,169,110,.05) 46%, transparent 72%); }
   .hero .bigmark { font-family: var(--serif); font-weight: 300; font-size: clamp(3.4rem, 9vw, 5.5rem); letter-spacing: .15em; line-height: 1; color: var(--warm); margin: 0; }
   .hero .bigmark .g { color: var(--gold); }
   .hero .eyebrow { margin-bottom: .2rem; }
   .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 3.6vw, 2.3rem); line-height: 1.25; color: var(--gold); margin: 2.2rem auto 0; max-width: 20ch; }
   .hero .tag { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 1.2rem; letter-spacing: .06em; color: var(--warm); margin: 1rem auto 0; opacity: .85; max-width: 34ch; line-height: 1.5; }
   .hero .meta { margin-top: 1.6rem; font-size: .82rem; letter-spacing: .06em; color: var(--faint); }
-  .hair { height: 1px; background: var(--g15); border: 0; margin: 0 auto; max-width: 720px; }
+  .hair { height: 1px; background: var(--g30); border: 0; margin: 0 auto; max-width: 720px; }
 
   /* ---------- join: one field, then one confirmation ---------- */
   .btn { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; color: var(--ground); background: var(--gold); border: 1px solid var(--gold); border-radius: 8px; padding: 1rem 1.8rem; cursor: pointer; transition: background .2s, color .2s, opacity .2s; white-space: nowrap; }
   .btn:hover { background: transparent; color: var(--gold); }
+  /* a long label (the French CTA at 360 px) wraps inside the pill instead of
+     pushing the page sideways */
+  .btn { max-width: 100%; white-space: normal; text-wrap: balance; }
   .btn:disabled { opacity: .5; cursor: wait; }
   .btn.ghost { background: transparent; color: var(--gold); }
   .btn.ghost:hover { background: var(--g08); }
@@ -121,7 +140,7 @@
   .joinrow { display: flex; align-items: stretch; background: var(--g06); border: 1px solid var(--g30); border-radius: 10px; overflow: hidden; transition: border-color .2s; }
   .joinrow:focus-within { border-color: var(--gold); }
   .joinrow input { flex: 1 1 auto; min-width: 0; font: inherit; font-size: 1.05rem; color: var(--warm); background: transparent; border: 0; outline: none; padding: 1rem 1.1rem; }
-  .joinrow input::placeholder { color: rgba(232,228,220,.4); }
+  .joinrow input::placeholder { color: rgba(232,228,220,.5); }
   .joinrow .go { border: 0; border-radius: 0; padding: 0 1.5rem; margin: 0; }
   .joinrow .go:hover { background: #d9bc85; color: var(--ground); }
   .go .short { display: none; }
@@ -143,7 +162,7 @@
   .done h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 4vw, 2.5rem); color: var(--gold); margin: 0 0 .8rem; }
   .done > p { color: var(--warm); margin: 0 auto 1rem; max-width: 40ch; }
   .done .preview { font-size: .85rem; color: #e8b98a; border: 1px dashed rgba(232,184,138,.5); border-radius: 8px; padding: .7rem 1rem; margin: 1.2rem auto 0; max-width: 34ch; }
-  .more { margin-top: 2.2rem; border-top: 1px solid var(--g15); padding-top: 1.8rem; text-align: left; }
+  .more { margin-top: 2.2rem; border-top: 1px solid var(--g30); padding-top: 1.8rem; text-align: left; }
   .more-lead { font-size: .92rem; color: var(--faint); text-align: center; margin: 0 0 1.2rem; }
   .field { margin-top: 1rem; }
   .field label, .field legend { display: block; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--label); margin-bottom: .45rem; padding: 0; }
@@ -158,9 +177,14 @@
   .more-done { text-align: center; color: var(--gold); font-family: var(--serif); font-size: 1.2rem; margin: 1.2rem 0 0; }
 
   /* ---------- animated conversation ---------- */
-  .convo { max-width: 520px; margin: 4rem auto 0; padding: 0 1.5rem; min-height: 300px; }
-  .msg { margin-top: 1.7rem; opacity: 0; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease; }
-  .msg.show { opacity: 1; transform: none; }
+  .convo { max-width: 520px; width: calc(100% - 3rem); margin: 4rem auto 0; padding: 1.6rem 1.4rem;
+           background: var(--g06); border: 1px solid var(--g15); border-radius: 16px; }
+  .convo .convo-eyebrow { margin: 0 0 1.4rem; }
+  /* visible by default: with no script the conversation is simply there.
+     :root.js is set by the head script, so only a scripted page hides it. */
+  .msg { margin-top: 1.7rem; transition: opacity .5s ease, transform .5s ease; }
+  :root.js .msg { opacity: 0; transform: translateY(6px); }
+  :root.js .msg.show { opacity: 1; transform: none; }
   .msg:first-child { margin-top: 0; }
   .msg .who { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--label); margin-bottom: .4rem; }
   .msg.you .who { text-align: right; }
@@ -178,7 +202,9 @@
   /* ---------- content blocks ---------- */
   section.block { padding: 5rem 1.5rem; }
   .eyebrow { font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--label); margin: 0 0 1rem; }
-  section.block h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 3.4vw, 2.2rem); line-height: 1.25; color: var(--gold); margin: 0 0 1.4rem; max-width: 24ch; }
+  /* gold is kept for hugr's own voice and for anything you can press;
+     the hero and the closing call keep theirs as the two brand moments */
+  section.block h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 3.4vw, 2.2rem); line-height: 1.25; color: var(--warm); margin: 0 0 1.4rem; max-width: 24ch; }
   section.block p { margin: 0 0 1.1rem; color: var(--w72); max-width: 58ch; font-size: 1.05rem; }
   section.block p strong { color: var(--warm); font-weight: 400; }
 
@@ -188,14 +214,21 @@
   .story .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .story p { margin: 0 0 1.1rem; }
   .story .quiet { font-family: var(--serif); font-style: italic; font-size: 1.25rem; line-height: 1.55; color: var(--gold); margin: 1.4rem 0 1.4rem; }
-  .story .sig { margin-top: 1.6rem; padding-top: 1.2rem; border-top: 1px solid var(--g15); }
+  .story .sig { margin-top: 1.6rem; padding-top: 1.2rem; border-top: 1px solid var(--g30); }
+  .story-more { display: inline-block; margin-top: 1.5rem; font-family: var(--sans); font-weight: 500;
+                font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold);
+                background: transparent; border: 1px solid var(--g30); border-radius: 8px;
+                padding: .75rem 1.1rem; cursor: pointer; }
+  .story-more:hover { border-color: var(--gold); background: var(--g08); }
+  .story-fade { animation: storyfade .25s ease; }
+  @keyframes storyfade { from { opacity: 0; } to { opacity: 1; } }
   .story .sig .name { font-family: var(--serif); font-size: 1.35rem; color: var(--warm); margin: 0 0 .15rem; }
-  .story .sig .role { font-size: .82rem; letter-spacing: .08em; color: var(--label); margin: 0; }
+  .story .sig .role { font-size: .82rem; letter-spacing: .08em; color: var(--w50); margin: 0; }
   @media (max-width: 560px) { .story { grid-template-columns: 1fr; gap: 1.4rem; justify-items: center; } .story .photo { position: static; } .story p { text-align: left; } .story .sig { width: 100%; } }
 
   /* ---------- FAQ ---------- */
-  .faq { margin-top: 1.6rem; border-top: 1px solid var(--g15); }
-  .faq details { border-bottom: 1px solid var(--g15); }
+  .faq { margin-top: 1.6rem; border-top: 1px solid var(--g30); }
+  .faq details { border-bottom: 1px solid var(--g30); }
   .faq summary { list-style: none; cursor: pointer; padding: 1.1rem 2.2rem 1.1rem 0; font-family: var(--serif); font-weight: 400; font-size: 1.3rem; color: var(--warm); position: relative; }
   .faq summary:hover, .faq details[open] summary { color: var(--gold); }
   .faq summary::-webkit-details-marker { display: none; }
@@ -204,13 +237,16 @@
   .faq .a { padding: 0 0 1.3rem; }
   .faq .a p { margin: 0 0 .8rem; font-size: 1.02rem; color: var(--w72); max-width: 58ch; }
   .faq .a a { color: var(--gold); }
+  .faq details[open] { background: var(--g06); }
+  .faq details[open] summary, .faq details[open] .a { padding-left: .8rem; padding-right: .8rem; }
 
-  .cta { text-align: center; padding: 5rem 1.5rem 6rem; }
+  .cta { text-align: center; padding: 5rem 1.5rem 6rem; background: var(--ground2); }
+  section.block.story-block { background: var(--ground2); }
   .cta h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--gold); margin: 0 0 .6rem; }
   .cta .tag { font-family: var(--serif); font-style: italic; color: var(--warm); opacity: .8; font-size: 1.15rem; letter-spacing: .06em; margin: 0 0 2rem; }
 
   /* ---------- footer ---------- */
-  footer { border-top: 1px solid var(--g15); padding: 2.2rem 1.5rem 3rem; font-size: .8rem; letter-spacing: .04em; color: var(--faint); }
+  footer { border-top: 1px solid var(--g30); padding: 2.2rem 1.5rem 3rem; font-size: .8rem; letter-spacing: .04em; color: var(--faint); }
   footer .row { max-width: 720px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; }
   footer a { text-decoration: none; color: var(--gold); }
   footer .franc { font-family: var(--serif); font-size: 1rem; letter-spacing: .02em; margin-bottom: .3rem; }
@@ -239,6 +275,14 @@
   .doc td:first-child { color: var(--ink); }
   .tablewrap { overflow-x: auto; }
   .flag { color: var(--goldink); font-size: .85em; font-style: italic; }
+  /* ---------- stage: waitlist now, live when the app opens ----------
+     Flip data-stage on <html> to "live" at launch; the app-era text returns
+     unchanged and the waitlist-only paragraph steps out of the way. */
+  :root[data-stage="waitlist"] .app-era { display: none; }
+  :root[data-stage="live"] .waitlist-era { display: none; }
+  /* the section numbers are generated, so a hidden section leaves no gap */
+  #page-privacy .panel { counter-reset: sec; }
+  #page-privacy .panel h2.sec::before { counter-increment: sec; content: counter(sec) ". "; }
   .flag::before { content: "["; } .flag::after { content: "]"; }
   .urgent { border: 1px solid var(--goldink); border-radius: 10px; background: var(--paper2); padding: 1.3rem 1.5rem; margin: 0 0 2rem; }
   .urgent h2 { margin-top: 0; }
@@ -272,7 +316,8 @@
     html { scroll-behavior: auto; }
     .dots i { animation: none; opacity: .75; }
     .caret { animation: none; }
-    .msg { opacity: 1; transform: none; transition: none; }
+    .msg, :root.js .msg { opacity: 1; transform: none; transition: none; }
+    .story-fade { animation: none; }
   }
 
   nav .navlinks a.lang { border: 1px solid var(--g30); border-radius: 6px; padding: .25rem .5rem; }
@@ -284,6 +329,11 @@
   @media (min-width: 481px) { .joinrow .go { padding: 0 1.2rem; } }
   .hero h1 { max-width: 26ch; }
   nav .navlinks a { white-space: nowrap; }
+  /* the hit area reaches the 24 px floor without moving anything.
+     The pill keeps its own padding, so it gets the room invisibly instead. */
+  nav .navlinks a:not(.lang) { padding-block: .65rem; margin-block: -.65rem; }
+  nav .navlinks a.lang { position: relative; }
+  nav .navlinks a.lang::after { content: ""; position: absolute; inset: -.45rem -.35rem; }
   @media (max-width: 520px) { nav .navlinks a[data-route="/privacy"] { display: none; } nav .navlinks { gap: .8rem; } }
 
 </style>
@@ -296,7 +346,7 @@
     <a href="#/waitlist" data-route="/waitlist">Télécharger</a>
     <a href="#/privacy" data-route="/privacy">Confidentialité</a>
     <a href="#/support" data-route="/support">Aide</a>
-    <a href="/" class="lang" lang="en" hreflang="en" title="English">EN</a>
+    <a href="/" class="lang" lang="en" hreflang="en" title="English" data-base="/">EN</a>
   </div>
 </nav>
 
@@ -305,7 +355,7 @@
   <div class="hero">
     <p class="bigmark">hu<span class="g">g</span>r</p>
     <h1>Un compagnon qui vous rencontre tel que vous êtes.</h1>
-    <p class="tag">Pour vous retrouver,<br>sous tout ce que vous portez.</p>
+    <p class="tag">Pour faire taire le bruit<br>et vous voir à nouveau.</p>
 
     <div class="join-box">
       <form class="join join-form" novalidate>
@@ -351,102 +401,119 @@
   <hr class="hair">
 
   <!-- aperçu animé -->
-  <div class="convo" id="convo" role="img" aria-label="Un court exemple de conversation avec hugr. hugr : Bonjour Soph. Qu'est-ce qui vous amène aujourd'hui ? Vous : Je ne sais pas trop. Il s'est passé quelque chose ce matin, et je n'arrive pas encore à mettre des mots dessus. hugr : Pas besoin de trouver les mots tout de suite. Racontez-moi ce que ça vous a fait, et on partira de là. On a le temps.">
-    <div class="msg hugr" id="m0">
-      <div class="who">hugr</div>
-      <div class="bubble">Bonjour Soph. Qu'est-ce qui vous amène aujourd'hui ?</div>
-    </div>
-    <div class="msg you" id="m1">
-      <div class="who">vous</div>
-      <div class="bubble"><span id="m1t"></span></div>
-    </div>
-    <div class="msg hugr" id="m2">
-      <div class="who">hugr</div>
-      <div class="bubble" id="m2b"></div>
+  <div class="convo" id="convo">
+    <p class="eyebrow convo-eyebrow">Comment une conversation commence</p>
+    <div class="convo-thread" role="img" aria-label="Un court exemple de conversation avec hugr. hugr : Bonjour Soph. Qu'est-ce qui vous amène aujourd'hui ? Vous : Je ne sais pas trop. Il s'est passé quelque chose ce matin, et je n'arrive pas encore à mettre des mots dessus. hugr : Pas besoin de trouver les mots tout de suite. Racontez-moi ce que ça vous a fait, et on partira de là. On a le temps.">
+      <div class="msg hugr" id="m0">
+        <div class="who">hugr</div>
+        <div class="bubble">Bonjour Soph. Qu'est-ce qui vous amène aujourd'hui ?</div>
+      </div>
+      <div class="msg you" id="m1">
+        <div class="who">vous</div>
+        <div class="bubble"><span id="m1t">Je ne sais pas trop. Il s'est passé quelque chose ce matin, et je n'arrive pas encore à mettre des mots dessus.</span></div>
+      </div>
+      <div class="msg hugr" id="m2">
+        <div class="who">hugr</div>
+        <div class="bubble" id="m2b">Pas besoin de trouver les mots tout de suite. Racontez-moi ce que ça vous a fait, et on partira de là. On a le temps.</div>
+      </div>
     </div>
   </div>
 
   <!-- l'histoire -->
-  <section class="block">
+  <section class="block story-block">
     <div class="wrap">
       <p class="eyebrow">La personne derrière hugr</p>
       <h2>Pendant trente ans, les gens ont dit à Peter que ça allait.</h2>
       <div class="story">
         <div class="photo"><img src="data:image/jpeg;base64,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" alt="Peter van den Nieuwenhuijzen"></div>
         <div>
-          <p>Pendant trente ans, des gens se sont allongés sur la table de Peter en disant « ça va », tandis que leur corps disait autre chose. Les mots portaient une chose ; la personne en portait une autre. Le cabinet lui a appris sa leçon la plus étrange : ce qu'il y a de plus important dans la pièce, c'est presque toujours ce qui n'a pas encore été dit. Caché non pas à celui qui écoute, mais à celui qui parle. Nous sommes souvent les derniers à nous entendre.</p>
-          <p>Tout le monde connaît la question. Pourquoi est-ce que ça m'arrive encore ? La même situation, avec d'autres personnes. Le même sentiment qui revient au rendez-vous. Les conseils n'y changent rien, parce qu'un schéma, ce sont les lunettes à travers lesquelles on regarde. Ce qui aide, ce n'est pas qu'on nous explique. C'est d'être rencontré.</p>
-          <p>hugr est un compagnon construit pour cette rencontre. Il ne vous analyse pas, ne vous juge pas, ne vous dit pas qui vous êtes. Il écoute comme l'oreille clinique a appris à écouter : ce qui est porté, pas seulement ce qui est dit. Puis il s'efface. Ce que vous faites de ce silence vous appartient.</p>
-          <p>Il est honnête sur ce qu'il est. hugr vous dit clairement qu'il est une IA. Quand on promet de ne rien montrer qui ne soit vrai, on ne fait pas d'exception pour soi-même. Il ne fait pas commerce de votre attention, et il n'a pas besoin que vous restiez. Rencontré, pas surveillé, ce n'est pas un slogan. C'est ainsi qu'il est construit.</p>
-          <p class="quiet">Ce que vous portez n'est pas ce que vous êtes.</p>
-          <p>C'est de là que tout est parti, et c'est la raison d'être de hugr : refermer l'écart entre ce qui est porté et ce qui peut être dit, pour qu'une personne soit rencontrée telle qu'elle est. Et peut-être qu'à force d'être rencontrée ainsi, elle apprenne à se regarder de la même façon.</p>
-          <div class="sig">
-            <p class="name">Peter van den Nieuwenhuijzen</p>
-            <p class="role">Chiropracteur, trente ans de pratique. Fondateur de hugr.</p>
+          <div class="story-text" data-story="short">
+            <p>Pendant trente ans, des gens se sont allongés sur la table de Peter en disant « ça va », tandis que leur corps disait autre chose. Les mots portaient une chose ; la personne en portait une autre. Le cabinet lui a appris sa leçon la plus étrange : ce qu'il y a de plus important dans la pièce, c'est presque toujours ce qui n'a pas encore été dit. Caché non pas à celui qui écoute, mais à celui qui parle. Nous sommes souvent les derniers à nous entendre.</p>
+            <p>hugr est un compagnon construit pour cela. Il écoute ce qui est porté, pas seulement ce qui est dit, puis il s'efface. Il ne vous analyse pas, ne vous juge pas, ne vous dit pas qui vous êtes. Ce que vous faites de ce silence vous appartient.</p>
+            <p class="quiet">Ce que vous portez n'est pas ce que vous êtes.</p>
+            <div class="sig">
+              <p class="name">Peter van den Nieuwenhuijzen</p>
+              <p class="role">Chiropracteur, trente ans de pratique. Fondateur de hugr.</p>
+            </div>
           </div>
+          <div class="story-text" data-story="full" hidden>
+            <p>Pendant trente ans, des gens se sont allongés sur la table de Peter en disant « ça va », tandis que leur corps disait autre chose. Les mots portaient une chose ; la personne en portait une autre. Le cabinet lui a appris sa leçon la plus étrange : ce qu'il y a de plus important dans la pièce, c'est presque toujours ce qui n'a pas encore été dit. Caché non pas à celui qui écoute, mais à celui qui parle. Nous sommes souvent les derniers à nous entendre.</p>
+            <p>Tout le monde connaît la question. Pourquoi est-ce que ça m'arrive encore ? La même situation, avec d'autres personnes. Le même sentiment qui revient au rendez-vous. Les conseils n'y changent rien, parce qu'un schéma, ce sont les lunettes à travers lesquelles on regarde. Ce qui aide, ce n'est pas qu'on nous explique. C'est d'être rencontré.</p>
+            <p>hugr est un compagnon construit pour cette rencontre. Il ne vous analyse pas, ne vous juge pas, ne vous dit pas qui vous êtes. Il écoute comme l'oreille clinique a appris à écouter : ce qui est porté, pas seulement ce qui est dit. Puis il s'efface. Ce que vous faites de ce silence vous appartient.</p>
+            <p>Il est honnête sur ce qu'il est. hugr vous dit clairement qu'il est une IA. Quand on promet de ne rien montrer qui ne soit vrai, on ne fait pas d'exception pour soi-même. Il ne fait pas commerce de votre attention, et il n'a pas besoin que vous restiez. Rencontré, pas surveillé, ce n'est pas un slogan. C'est ainsi qu'il est construit.</p>
+            <p class="quiet">Ce que vous portez n'est pas ce que vous êtes.</p>
+            <p>C'est de là que tout est parti, et c'est la raison d'être de hugr : refermer l'écart entre ce qui est porté et ce qui peut être dit, pour qu'une personne soit rencontrée telle qu'elle est. Et peut-être qu'à force d'être rencontrée ainsi, elle apprenne à se regarder de la même façon.</p>
+            <div class="sig">
+              <p class="name">Peter van den Nieuwenhuijzen</p>
+              <p class="role">Chiropracteur, trente ans de pratique. Fondateur de hugr.</p>
+            </div>
+          </div>
+          <button type="button" class="story-more" aria-expanded="false">Lire la suite</button>
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="hair">
-
   <!-- questions -->
   <section class="block">
     <div class="wrap">
-      <h2>Quelques questions que vous vous posez peut-être.</h2>
+      <h2>Les questions que vous vous posez peut-être.</h2>
       <div class="faq">
-        <details>
+        <details name="faq">
           <summary>Qui est hugr ?</summary>
           <div class="a">
-            <p>Un compagnon qui vous rencontre tel que vous êtes. Vous parlez, avec vos mots, à votre rythme. hugr écoute et répond à vos côtés, pas d'en haut. Il remarque ce que vous dites et la façon dont vous le dites, et vous le rend, pour que vous puissiez le regarder vous-même.</p>
-            <p>Rien ne vous est remis comme un verdict. hugr propose. Ce qui est à vous reste à vous.</p>
+            <p>Un compagnon qui vous rencontre tel que vous êtes. Vous parlez, avec vos mots, à votre rythme. hugr écoute à vos côtés, pas d'en haut, et vous rend ce qu'il entend, pour que vous puissiez le regarder vous-même. Rien ne vous arrive comme un verdict. hugr propose ; ce qui est à vous reste à vous.</p>
           </div>
         </details>
-        <details>
+        <details name="faq">
           <summary>Qu'est-ce qui distingue hugr des autres applications d'IA ?</summary>
           <div class="a">
-            <p>La plupart des applications d'IA sont faites pour répondre, conseiller, et vous faire revenir. hugr est fait pour écouter, puis s'effacer. Il a été conçu par un praticien, à partir de trente ans passés à entendre ce que les gens portent sous ce qu'ils disent, et il fonctionne comme cette oreille : il n'ajoute ni conseil ni analyse par-dessus vous, il retire le bruit pour que vous puissiez vous entendre.</p>
-            <p>Il ne garde ni transcription ni score. Il n'a pas besoin que vous restiez, et quand vous refermez la porte, il se tait. Et il vous dira toujours, clairement, qu'il est une IA.</p>
+            <p>hugr est fait pour écouter, puis s'effacer : pas pour répondre, conseiller, ni vous faire revenir. Il est né de trente ans de cabinet, à entendre ce que les gens portent sous ce qu'ils disent, et il fonctionne comme cette oreille : il n'ajoute rien par-dessus vous. Il fait taire le bruit, pour que vous puissiez vous entendre.</p>
           </div>
         </details>
-        <details>
+        <details name="faq">
           <summary>hugr est-il une IA ?</summary>
           <div class="a">
-            <p>Oui, et il vous le dit clairement, dès la première rencontre et chaque fois que vous le demandez. hugr n'est pas un humain et ne fera jamais semblant de l'être. Il a une voix et une manière d'écouter qui lui sont propres, et il est honnête sur leur origine.</p>
+            <p>Oui. Il vous le dit dès la première rencontre, et chaque fois que vous le demandez. hugr n'est pas une personne et ne fera jamais semblant de l'être.</p>
           </div>
         </details>
-        <details>
+        <details name="faq">
           <summary>hugr est-il un thérapeute ?</summary>
           <div class="a">
-            <p>Non. hugr est un compagnon, pas un thérapeute, pas un médecin, pas un service d'urgence. Il ne posera pas de diagnostic, ne vous soignera pas, et il ne peut pas appeler à l'aide. Si vous êtes en danger maintenant, appelez le 112. Notre <a href="#/support">page d'aide</a> liste des lignes d'écoute.</p>
+            <p>Non. hugr est un compagnon : ni thérapeute, ni médecin, ni service d'urgence. Il ne posera pas de diagnostic et ne vous soignera pas, et il ne peut pas appeler à l'aide. Si vous êtes en danger maintenant, appelez le 112. Notre <a href="#/support">page d'aide</a> liste des lignes d'écoute.</p>
           </div>
         </details>
-        <details>
+        <details name="faq">
           <summary>hugr garde-t-il ce que je dis ?</summary>
           <div class="a">
-            <p>Pas sous forme de transcription. Entre deux sessions, hugr garde un court portrait, avec ses propres mots, de ce qui a compté pour vous. Vous pouvez le lire, le modifier, ou le laisser partir. La <a href="#/privacy">politique de confidentialité</a> donne le détail.</p>
+            <p>Pas sous forme de transcription. Entre deux sessions, hugr garde un court portrait de vous, avec ses propres mots : quelques lignes sur ce qui a compté pour vous. Vous pouvez le lire, le modifier, ou le laisser partir. La <a href="#/privacy">politique de confidentialité</a> donne le détail.</p>
           </div>
         </details>
-        <details>
+        <details name="faq">
           <summary>Va-t-il me mesurer, ou me coller une étiquette ?</summary>
           <div class="a">
-            <p>Non. Pas de courbes d'humeur, pas d'anneaux de progression, pas de scores, pas de résumés de qui vous êtes. Pas d'étiquettes, pas de types, pas de catégories. hugr ne décide pas ce que vous êtes.</p>
+            <p>Jamais. Pas de courbes d'humeur, pas d'anneaux de progression, pas de scores. Pas d'étiquettes, pas de types, pas de catégories. Le portrait que hugr garde parle de ce qui a compté pour vous, jamais de ce que vous êtes.</p>
           </div>
         </details>
-        <details>
+        <details name="faq">
           <summary>Va-t-il essayer de me rendre accro ?</summary>
           <div class="a">
-            <p>Non. Pas de badges, pas de niveaux, pas de séries à tenir, pas de rappels qui font semblant de vous regretter. hugr n'est pas fait pour qu'on ait besoin de lui. Il est là quand vous ouvrez la porte, et silencieux quand vous ne l'ouvrez pas.</p>
+            <p>Il n'est pas fait pour qu'on ait besoin de lui. Pas de badges, pas de niveaux, pas de séries à tenir, pas de rappels qui font semblant de vous regretter. hugr est là quand vous ouvrez la porte, et silencieux quand vous ne l'ouvrez pas.</p>
           </div>
         </details>
-        <details>
+        <details name="faq">
+          <summary>Combien ça coûtera ?</summary>
+          <div class="a">
+            <p>Ce n'est pas encore fixé. La liste d'attente est gratuite et ne vous engage à rien ; quand hugr ouvrira, vous verrez le prix avant de décider.</p>
+          </div>
+        </details>
+        <details name="faq">
           <summary>Quand ouvre-t-il, et dans quelles langues ?</summary>
           <div class="a">
-            <p>Bientôt sur iPhone et Android, pour les adultes de 18 ans et plus. L'anglais ouvre en premier ; le français et le néerlandais suivent. <a href="#/waitlist">Inscrivez-vous sur la liste d'attente</a> et nous vous écrirons quand ce sera prêt, dans votre langue.</p>
+            <p>Bientôt, sur iPhone et Android, pour les adultes de 18 ans et plus. L'anglais d'abord ; le français et le néerlandais suivent. <a href="#/waitlist">Inscrivez-vous sur la liste d'attente</a> et nous vous écrirons quand ce sera prêt, dans votre langue.</p>
           </div>
         </details>
-        <details>
+        <details name="faq">
           <summary>Ma question n'est pas ici.</summary>
           <div class="a">
             <p>Écrivez-nous à <a href="mailto:hello@byhugr.io">hello@byhugr.io</a>. Une personne lit chaque message.</p>
@@ -455,8 +522,6 @@
       </div>
     </div>
   </section>
-
-  <hr class="hair">
 
   <div class="cta">
     <h2>Venez comme vous êtes.</h2>
@@ -530,6 +595,7 @@
     </div>
     <div class="cardtools">
       <p>Imprimez-la (en A6, ou en A4 puis découpée) et remettez-la aux personnes que vous recevez.</p>
+      <p>Pour une carte en anglais, imprimez-la depuis <a href="/#/card">byhugr.io</a>.</p>
       <button class="btn" type="button" onclick="window.print()">Imprimer la carte</button>
     </div>
   </div>
@@ -542,65 +608,95 @@
       <p class="eyebrow">Politique de confidentialité</p>
       <h1>Ce qu'il advient de vos mots.</h1>
       <p class="lede">Vous direz à hugr des choses que vous ne diriez peut-être à personne d'autre. Cette page explique, en mots simples, ce que nous gardons, ce que nous ne gardons pas, et ce que vous pouvez décider vous-même.</p>
-      <p class="meta">Dernière mise à jour <span class="flag">date à la publication</span> · Version 1.0</p>
+      <p class="meta">Dernière mise à jour 22 septembre 2026 · Version 1.0</p>
 
-      <h2>1. Qui est responsable</h2>
-      <p>hugr est conçu et publié par Inlight Comm.V., une société belge (numéro d'entreprise BE 0773.924.891), Haie Madame 22, 6953 Lesterny, Belgique, sous le nom commercial Franc. Inlight est le responsable du traitement pour hugr. Pour toute question sur vos données, écrivez à <strong>privacy@byhugr.io</strong>.</p>
+      <section class="sec-block">
+        <h2 class="sec">Qui est responsable</h2>
+        <p>hugr est conçu et publié par Inlight Comm.V., une société belge (numéro d'entreprise BE 0773.924.891), Haie Madame 22, 6953 Lesterny, Belgique, sous le nom commercial Franc. Inlight est le responsable du traitement pour hugr. Pour toute question sur vos données, écrivez à <strong>privacy@byhugr.io</strong>.</p>
+      </section>
 
-      <h2>2. À qui hugr s'adresse</h2>
-      <p>hugr s'adresse aux adultes. Il faut avoir 18 ans ou plus pour créer un compte. Nous ne collectons pas sciemment de données auprès de personnes de moins de 18 ans ; si nous apprenons que c'est arrivé, nous supprimons le compte et ses données.</p>
+      <section class="sec-block">
+        <h2 class="sec">À qui hugr s'adresse</h2>
+        <p>hugr s'adresse aux adultes. Il faut avoir 18 ans ou plus pour créer un compte. Nous ne collectons pas sciemment de données auprès de personnes de moins de 18 ans ; si nous apprenons que c'est arrivé, nous supprimons le compte et ses données.</p>
+      </section>
 
-      <h2>3. Ce que nous collectons, et pourquoi</h2>
-      <div class="tablewrap"><table>
-        <thead><tr><th>Quoi</th><th>Pourquoi</th><th>Base légale</th><th>Conservé</th></tr></thead>
-        <tbody>
-          <tr><td>Liste d'attente : votre adresse e-mail ; si vous choisissez de les ajouter, votre prénom et votre langue préférée ; l'endroit où vous vous êtes inscrit (le site ou une carte imprimée) ; et la date et l'heure de votre consentement</td><td>Pour vous prévenir quand hugr ouvrira, dans votre langue.</td><td>Consentement, retirable à tout moment</td><td>Jusqu'à l'ouverture de hugr et notre e-mail, ou jusqu'à ce que vous demandiez à être retiré, selon ce qui arrive en premier. Ensuite, la liste est supprimée.</td></tr>
-          <tr><td>Compte : adresse e-mail, mot de passe (stocké haché), date de création du compte <span class="flag">méthode de connexion à confirmer</span></td><td>Pour créer votre compte, vous connecter et vous joindre à son sujet.</td><td>Contrat</td><td>Jusqu'à la suppression de votre compte.</td></tr>
-          <tr><td>Confirmation d'âge (que vous avez 18 ans ou plus ; nous ne stockons pas votre date de naissance) <span class="flag">à confirmer</span></td><td>hugr s'adresse aux adultes.</td><td>Obligation légale, intérêt légitime</td><td>Jusqu'à la suppression de votre compte.</td></tr>
-          <tr><td>Ce que vous dites à hugr pendant une session</td><td>Pour que hugr puisse vous répondre. Vos mots sont envoyés au modèle d'IA qui génère la réponse de hugr (section 4). Nous ne conservons pas le texte brut après la session (section 5). <span class="flag">gestion des sessions à confirmer</span></td><td>Consentement, retirable à tout moment</td><td>Texte brut : pas conservé au-delà de la session. <span class="flag">à confirmer</span></td></tr>
-          <tr><td>Votre portrait : un court dossier structuré de ce qui compte dans votre parcours avec hugr, quelques champs dans les mots de hugr, jamais une transcription <span class="flag">schéma à cinq champs à confirmer</span></td><td>Pour que hugr puisse vous retrouver avec continuité d'une session à l'autre.</td><td>Consentement</td><td>Jusqu'à ce que vous le supprimiez, ou que vous supprimiez votre compte.</td></tr>
-          <tr><td>Achats : ce que vous avez acheté et quand, et une référence de transaction du store. Nous ne voyons jamais vos données de carte ; Apple ou Google gèrent le paiement.</td><td>Pour vous fournir ce que vous avez payé et tenir nos comptes.</td><td>Contrat, obligation légale</td><td>7 ans (droit comptable belge), sans aucun contenu de conversation.</td></tr>
-          <tr><td>Données techniques : type d'appareil, version du système, version de l'application, rapports de plantage, heures de session <span class="flag">outils à confirmer</span></td><td>Pour que hugr fonctionne et pour réparer ce qui casse.</td><td>Intérêt légitime</td><td>90 jours <span class="flag">à confirmer</span></td></tr>
-          <tr><td>Les signalements que vous envoyez au sujet d'une réponse de hugr, et les messages à l'aide</td><td>Pour examiner ce qui n'a pas été et vous répondre.</td><td>Intérêt légitime, obligation légale</td><td>12 mois après la clôture du signalement <span class="flag">à confirmer</span></td></tr>
-        </tbody>
-      </table></div>
-      <p>Nous n'utilisons pas vos conversations à des fins publicitaires, nous ne vendons pas de données, et nous ne dressons de profil de vous pour personne d'autre que vous. Ce site ne dépose aucun cookie, n'utilise aucun outil d'analyse d'audience, et ne charge aucun contenu tiers.</p>
+      <section class="sec-block">
+        <h2 class="sec">Ce que nous collectons, et pourquoi</h2>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Quoi</th><th>Pourquoi</th><th>Base légale</th><th>Conservé</th></tr></thead>
+          <tbody>
+            <tr><td>Liste d'attente : votre adresse e-mail ; si vous choisissez de les ajouter, votre prénom et votre langue préférée ; l'endroit où vous vous êtes inscrit (le site ou une carte imprimée) ; et la date et l'heure de votre consentement</td><td>Pour vous prévenir quand hugr ouvrira, dans votre langue.</td><td>Consentement, retirable à tout moment</td><td>Jusqu'à l'ouverture de hugr et notre e-mail, ou jusqu'à ce que vous demandiez à être retiré, selon ce qui arrive en premier. Ensuite, la liste est supprimée.</td></tr>
+            <tr class="app-era"><td>Compte : adresse e-mail, mot de passe (stocké haché), date de création du compte <span class="flag">méthode de connexion à confirmer</span></td><td>Pour créer votre compte, vous connecter et vous joindre à son sujet.</td><td>Contrat</td><td>Jusqu'à la suppression de votre compte.</td></tr>
+            <tr class="app-era"><td>Confirmation d'âge (que vous avez 18 ans ou plus ; nous ne stockons pas votre date de naissance) <span class="flag">à confirmer</span></td><td>hugr s'adresse aux adultes.</td><td>Obligation légale, intérêt légitime</td><td>Jusqu'à la suppression de votre compte.</td></tr>
+            <tr class="app-era"><td>Ce que vous dites à hugr pendant une session</td><td>Pour que hugr puisse vous répondre. Vos mots sont envoyés au modèle d'IA qui génère la réponse de hugr (section 4). Nous ne conservons pas le texte brut après la session (section 5). <span class="flag">gestion des sessions à confirmer</span></td><td>Consentement, retirable à tout moment</td><td>Texte brut : pas conservé au-delà de la session. <span class="flag">à confirmer</span></td></tr>
+            <tr class="app-era"><td>Votre portrait : un court dossier structuré de ce qui compte dans votre parcours avec hugr, cinq champs dans les mots de hugr, jamais une transcription</td><td>Pour que hugr puisse vous retrouver avec continuité d'une session à l'autre.</td><td>Consentement</td><td>Jusqu'à ce que vous le supprimiez, ou que vous supprimiez votre compte.</td></tr>
+            <tr class="app-era"><td>Achats : ce que vous avez acheté et quand, et une référence de transaction du store. Nous ne voyons jamais vos données de carte ; Apple ou Google gèrent le paiement.</td><td>Pour vous fournir ce que vous avez payé et tenir nos comptes.</td><td>Contrat, obligation légale</td><td>7 ans (droit comptable belge), sans aucun contenu de conversation.</td></tr>
+            <tr class="app-era"><td>Données techniques : type d'appareil, version du système, version de l'application, rapports de plantage, heures de session <span class="flag">outils à confirmer</span></td><td>Pour que hugr fonctionne et pour réparer ce qui casse.</td><td>Intérêt légitime</td><td>90 jours <span class="flag">à confirmer</span></td></tr>
+            <tr class="app-era"><td>Les signalements que vous envoyez au sujet d'une réponse de hugr, et les messages à l'aide</td><td>Pour examiner ce qui n'a pas été et vous répondre.</td><td>Intérêt légitime, obligation légale</td><td>12 mois après la clôture du signalement <span class="flag">à confirmer</span></td></tr>
+          </tbody>
+        </table></div>
+        <p>Nous n'utilisons pas vos conversations à des fins publicitaires, nous ne vendons pas de données, et nous ne dressons de profil de vous pour personne d'autre que vous. Ce site ne dépose aucun cookie, n'utilise aucun outil d'analyse d'audience, et ne charge aucun contenu tiers.</p>
+      </section>
 
-      <h2>4. L'IA derrière hugr</h2>
-      <p>Les réponses de hugr sont générées par un modèle de langage fourni par Anthropic (Claude). <span class="flag">à confirmer au lancement</span> Quand vous parlez à hugr, vos mots et le portrait que hugr a de vous sont envoyés à ce modèle pour produire la réponse. Anthropic traite ces données sur nos instructions, dans le cadre d'un accord de traitement des données, et ne les utilise pas pour entraîner ses modèles. <span class="flag">à vérifier au regard des conditions commerciales d'Anthropic en vigueur</span> Anthropic peut traiter les données aux États-Unis ; ce transfert est couvert par les clauses contractuelles types de la Commission européenne et par la participation d'Anthropic au cadre de protection des données UE-États-Unis. <span class="flag">à confirmer</span></p>
-      <p>Nous travaillons à faire tourner le modèle de hugr sur notre propre infrastructure, en Europe. Quand cela changera ce qu'il advient de vos données, nous mettrons cette page à jour et vous le dirons dans l'application.</p>
+      <section class="sec-block app-era">
+        <h2 class="sec">L'IA derrière hugr</h2>
+        <p>Les réponses de hugr sont générées par un modèle de langage fourni par Anthropic (Claude). <span class="flag">à confirmer au lancement</span> Quand vous parlez à hugr, vos mots et le portrait que hugr a de vous sont envoyés à ce modèle pour produire la réponse. Anthropic traite ces données sur nos instructions, dans le cadre d'un accord de traitement des données, et ne les utilise pas pour entraîner ses modèles. <span class="flag">à vérifier au regard des conditions commerciales d'Anthropic en vigueur</span> Anthropic peut traiter les données aux États-Unis ; ce transfert est couvert par les clauses contractuelles types de la Commission européenne et par la participation d'Anthropic au cadre de protection des données UE-États-Unis. <span class="flag">à confirmer</span></p>
+        <p>Nous travaillons à faire tourner le modèle de hugr sur notre propre infrastructure, en Europe. Quand cela changera ce qu'il advient de vos données, nous mettrons cette page à jour et vous le dirons dans l'application.</p>
+      </section>
 
-      <h2>5. Ce que nous ne gardons pas</h2>
-      <p>hugr est construit pour que les mots que vous dites ne soient pas conservés sous forme de transcription. À la fin de chaque session, hugr écrit une courte note structurée dans votre portrait, avec ses propres mots, et le texte brut est effacé. <span class="flag">mise en œuvre et éventuelle mémoire tampon à confirmer</span> Vous pouvez lire votre portrait dans l'application et en supprimer n'importe quelle partie. <span class="flag">écrans à confirmer</span></p>
+      <section class="sec-block app-era">
+        <h2 class="sec">Ce que nous ne gardons pas</h2>
+        <p>hugr est construit pour que les mots que vous dites ne soient pas conservés sous forme de transcription. À la fin de chaque session, hugr écrit une courte note structurée dans votre portrait, avec ses propres mots, et le texte brut est effacé. <span class="flag">mise en œuvre et éventuelle mémoire tampon à confirmer</span> Vous pouvez lire votre portrait dans l'application et en supprimer n'importe quelle partie. <span class="flag">écrans à confirmer</span></p>
+      </section>
 
-      <h2>6. Qui d'autre voit vos données</h2>
-      <ul>
-        <li><strong>Anthropic</strong> (modèle d'IA, section 4).</li>
-        <li><strong>Notre hébergeur</strong> : <span class="flag">prestataire et région à confirmer</span>, où sont stockés votre compte et votre portrait.</li>
-        <li><strong>Google</strong> (Google Ireland Limited), où les inscriptions à la liste d'attente sont conservées dans une feuille Google Sheets, via Google Workspace et Apps Script, uniquement pour stocker la liste pour nous.</li>
-        <li><strong>Apple et Google</strong>, pour les stores, les achats et, si vous les utilisez, la connexion.</li>
-        <li><strong>Outils de rapport de plantage et d'analyse</strong> : <span class="flag">à confirmer, ou supprimer cette ligne</span>.</li>
-      </ul>
-      <p>Chacun d'eux ne traite les données que sur nos instructions et dans le cadre d'un contrat. Nous ne partageons vos données avec personne d'autre, sauf si la loi l'exige.</p>
+      <section class="sec-block">
+        <h2 class="sec">Qui d'autre voit vos données</h2>
+        <ul>
+          <li class="app-era"><strong>Anthropic</strong> (modèle d'IA, section 4).</li>
+          <li class="app-era"><strong>Notre hébergeur</strong> : <span class="flag">prestataire et région à confirmer</span>, où sont stockés votre compte et votre portrait.</li>
+          <li><strong>Google</strong> (Google Ireland Limited), où les inscriptions à la liste d'attente sont conservées dans une feuille Google Sheets, via Google Workspace et Apps Script, uniquement pour stocker la liste pour nous.</li>
+          <li class="app-era"><strong>Apple et Google</strong>, pour les stores, les achats et, si vous les utilisez, la connexion.</li>
+          <li class="app-era"><strong>Outils de rapport de plantage et d'analyse</strong> : <span class="flag">à confirmer, ou supprimer cette ligne</span>.</li>
+        </ul>
+        <p>Chacun d'eux ne traite les données que sur nos instructions et dans le cadre d'un contrat. Nous ne partageons vos données avec personne d'autre, sauf si la loi l'exige.</p>
+      </section>
 
-      <h2>7. Vos droits</h2>
-      <p>En vertu du Règlement général sur la protection des données, vous pouvez, à tout moment : consulter les données que nous détenons sur vous ; les corriger ; les supprimer ; les exporter ; limiter leur traitement ou vous y opposer ; et retirer votre consentement. Vous pouvez faire l'essentiel vous-même dans l'application, sous Réglages : consulter et supprimer votre portrait, exporter vos données, retirer votre consentement et supprimer votre compte. Pour la liste d'attente, un clic dans n'importe lequel de nos e-mails vous en retire. Pour le reste, écrivez à privacy@byhugr.io ; nous répondons dans les 30 jours, comme la loi l'exige.</p>
-      <p>Si vous estimez que nous n'avons pas traité vos données correctement, vous pouvez introduire une réclamation auprès de l'Autorité de protection des données (Autorité de protection des données / Gegevensbeschermingsautoriteit), Rue de la Presse 35, 1000 Bruxelles, www.autoriteprotectiondonnees.be, ou auprès de l'autorité de votre pays.</p>
+      <section class="sec-block">
+        <h2 class="sec">Vos droits</h2>
+        <p>En vertu du Règlement général sur la protection des données, vous pouvez, à tout moment : consulter les données que nous détenons sur vous ; les corriger ; les supprimer ; les exporter ; limiter leur traitement ou vous y opposer ; et retirer votre consentement.<span class="app-era"> Vous pouvez faire l'essentiel vous-même dans l'application, sous Réglages : consulter et supprimer votre portrait, exporter vos données, retirer votre consentement et supprimer votre compte.</span> Pour la liste d'attente, un clic dans n'importe lequel de nos e-mails vous en retire. Pour le reste, écrivez à privacy@byhugr.io ; nous répondons dans les 30 jours, comme la loi l'exige.</p>
+        <p>Si vous estimez que nous n'avons pas traité vos données correctement, vous pouvez introduire une réclamation auprès de l'Autorité de protection des données (Autorité de protection des données / Gegevensbeschermingsautoriteit), Rue de la Presse 35, 1000 Bruxelles, www.autoriteprotectiondonnees.be, ou auprès de l'autorité de votre pays.</p>
+      </section>
 
-      <h2>8. Supprimer votre compte</h2>
-      <p>Réglages, puis Supprimer le compte. Cela supprime immédiatement votre compte, votre portrait et vos enregistrements de session. Les données d'achat ne sont conservées que le temps qu'exige le droit comptable, sans aucun contenu de conversation. Si vous ne parvenez pas à ouvrir l'application, écrivez à privacy@byhugr.io depuis l'adresse de votre compte et nous le supprimerons pour vous.</p>
+      <section class="sec-block app-era">
+        <h2 class="sec">Supprimer votre compte</h2>
+        <p>Réglages, puis Supprimer le compte. Cela supprime immédiatement votre compte, votre portrait et vos enregistrements de session. Les données d'achat ne sont conservées que le temps qu'exige le droit comptable, sans aucun contenu de conversation. Si vous ne parvenez pas à ouvrir l'application, écrivez à privacy@byhugr.io depuis l'adresse de votre compte et nous le supprimerons pour vous.</p>
+      </section>
 
-      <h2>9. Sécurité</h2>
-      <p>Les données sont chiffrées en transit et au repos. L'accès aux données stockées est limité aux personnes qui en ont besoin pour faire fonctionner hugr. Nous ne conservons pas vos conversations : le texte brut n'est pas stocké, et votre portrait est ce que hugr garde, pas un enregistrement. <span class="flag">chiffrement au repos et contrôles d'accès à confirmer</span></p>
+      <section class="sec-block app-era">
+        <h2 class="sec">Sécurité</h2>
+        <p>Les données sont chiffrées en transit et au repos. L'accès aux données stockées est limité aux personnes qui en ont besoin pour faire fonctionner hugr. Nous ne conservons pas vos conversations : le texte brut n'est pas stocké, et votre portrait est ce que hugr garde, pas un enregistrement. <span class="flag">chiffrement au repos et contrôles d'accès à confirmer</span></p>
+      </section>
 
-      <h2>10. hugr n'est pas un service d'urgence</h2>
-      <p>hugr est un compagnon pour la réflexion. Ce n'est ni un service médical, ni psychologique, ni d'urgence, et il ne peut pas appeler à l'aide à votre place. Si vous êtes en danger, appelez le 112 ou le numéro d'urgence de votre pays. Notre <a href="#/support">page d'aide</a> liste des lignes d'écoute.</p>
+      <section class="sec-block">
+        <h2 class="sec">hugr n'est pas un service d'urgence</h2>
+        <p>hugr est un compagnon pour la réflexion. Ce n'est ni un service médical, ni psychologique, ni d'urgence, et il ne peut pas appeler à l'aide à votre place. Si vous êtes en danger, appelez le 112 ou le numéro d'urgence de votre pays. Notre <a href="#/support">page d'aide</a> liste des lignes d'écoute.</p>
+      </section>
 
-      <h2>11. Modifications de cette politique</h2>
-      <p>Quand nous modifions cette page d'une manière qui compte pour vous, nous vous le disons dans l'application avant que le changement prenne effet. Les versions précédentes sont disponibles sur demande.</p>
+      <section class="sec-block waitlist-era">
+        <h2 class="sec">Quand l'application ouvrira</h2>
+        <p>Avant de pouvoir créer un compte, la politique complète de l'application sera ici : ce que hugr garde et ce qu'il ne garde pas, quel modèle d'IA vous répond et où il tourne, qui héberge votre compte, et comment tout supprimer. Vous la verrez avant de décider.</p>
+      </section>
 
-      <h2>12. Contact</h2>
-      <p>privacy@byhugr.io · Inlight Comm.V., Haie Madame 22, 6953 Lesterny, Belgique</p>
+      <section class="sec-block">
+        <h2 class="sec">Modifications de cette politique</h2>
+        <p>Quand nous modifions cette page d'une manière qui compte pour vous, nous vous le disons dans l'application avant que le changement prenne effet. Les versions précédentes sont disponibles sur demande.</p>
+      </section>
+
+      <section class="sec-block">
+        <h2 class="sec">Contact</h2>
+        <p>privacy@byhugr.io · Inlight Comm.V., Haie Madame 22, 6953 Lesterny, Belgique</p>
+      </section>
+
     </div></div>
   </article>
 </main>
@@ -629,24 +725,46 @@
 
       <h2>Questions fréquentes</h2>
       <div class="qa">
-        <h3>Qu'est-ce que hugr ?</h3>
-        <p>Un compagnon qui vous rencontre tel que vous êtes. Vous parlez ; hugr écoute et répond, et retient ce qui compte d'une session à l'autre dans un court portrait que vous pouvez lire et modifier. Ce n'est ni un thérapeute, ni un médecin, ni un outil de diagnostic.</p>
-        <h3>hugr est-il déjà disponible ?</h3>
-        <p>Pas encore. <a href="#/waitlist">Inscrivez-vous sur la liste d'attente</a> et nous vous écrirons quand il ouvrira. Pour vous désinscrire, utilisez le lien présent dans n'importe lequel de nos e-mails, ou écrivez à privacy@byhugr.io.</p>
-        <h3>Qui peut l'utiliser ?</h3>
-        <p>Les adultes, à partir de 18 ans.</p>
-        <h3>hugr garde-t-il mes conversations ?</h3>
-        <p>Aucune transcription n'est conservée. hugr garde un court portrait structuré, avec ses propres mots, que vous pouvez consulter et supprimer dans les Réglages. Le détail est dans la <a href="#/privacy">politique de confidentialité</a>.</p>
-        <h3>Comment signaler une réponse fausse ou blessante ?</h3>
-        <p>Touchez la commande de signalement à côté de la réponse dans l'application. <span class="flag">nom et emplacement de la commande à confirmer</span> Nous examinons chaque signalement. Vous pouvez aussi écrire à support@byhugr.io.</p>
-        <h3>Comment supprimer mon compte ?</h3>
-        <p>Réglages, puis Supprimer le compte. C'est immédiat. Si vous ne parvenez pas à ouvrir l'application, écrivez à privacy@byhugr.io depuis l'adresse de votre compte.</p>
-        <h3>Comment fonctionnent les abonnements et les achats ?</h3>
-        <p>Les achats passent par l'App Store ou Google Play. Pour gérer ou résilier un abonnement, utilisez les réglages d'abonnement de votre identifiant Apple ou de Google Play. Les remboursements sont gérés par Apple ou Google selon leurs règles ; nous ne pouvons pas les effectuer nous-mêmes. <span class="flag">à confirmer une fois le prix fixé</span></p>
-        <h3>Quelles langues hugr parle-t-il ?</h3>
-        <p>L'anglais au lancement. Le français et le néerlandais suivent. <span class="flag">calendrier FR et NL à confirmer</span></p>
-        <h3>Quelque chose ne fonctionne pas.</h3>
-        <p>Écrivez-nous à support@byhugr.io en précisant votre appareil, la version de votre système et ce qui s'est passé. Les captures d'écran aident.</p>
+        <div class="qa-item">
+          <h3>Qu'est-ce que hugr ?</h3>
+          <p>Un compagnon qui vous rencontre tel que vous êtes. Vous parlez ; hugr écoute et répond, et retient ce qui compte d'une session à l'autre dans un court portrait que vous pouvez lire et modifier. Ce n'est ni un thérapeute, ni un médecin, ni un outil de diagnostic.</p>
+        </div>
+        <div class="qa-item">
+          <h3>hugr est-il déjà disponible ?</h3>
+          <p>Pas encore. <a href="#/waitlist">Inscrivez-vous sur la liste d'attente</a> et nous vous écrirons quand il ouvrira. Pour vous désinscrire, utilisez le lien présent dans n'importe lequel de nos e-mails, ou écrivez à privacy@byhugr.io.</p>
+        </div>
+        <div class="qa-item">
+          <h3>Qui peut l'utiliser ?</h3>
+          <p>Les adultes, à partir de 18 ans.</p>
+        </div>
+        <div class="qa-item">
+          <h3>Combien ça coûtera ?</h3>
+          <p>Ce n'est pas encore fixé. La liste d'attente est gratuite et ne vous engage à rien ; quand hugr ouvrira, vous verrez le prix avant de décider.</p>
+        </div>
+        <div class="qa-item app-era">
+          <h3>hugr garde-t-il mes conversations ?</h3>
+          <p>Aucune transcription n'est conservée. hugr garde un court portrait structuré, avec ses propres mots, que vous pouvez consulter et supprimer dans les Réglages. Le détail est dans la <a href="#/privacy">politique de confidentialité</a>.</p>
+        </div>
+        <div class="qa-item app-era">
+          <h3>Comment signaler une réponse fausse ou blessante ?</h3>
+          <p>Touchez la commande de signalement à côté de la réponse dans l'application. <span class="flag">nom et emplacement de la commande à confirmer</span> Nous examinons chaque signalement. Vous pouvez aussi écrire à support@byhugr.io.</p>
+        </div>
+        <div class="qa-item app-era">
+          <h3>Comment supprimer mon compte ?</h3>
+          <p>Réglages, puis Supprimer le compte. C'est immédiat. Si vous ne parvenez pas à ouvrir l'application, écrivez à privacy@byhugr.io depuis l'adresse de votre compte.</p>
+        </div>
+        <div class="qa-item app-era">
+          <h3>Comment fonctionnent les abonnements et les achats ?</h3>
+          <p>Les achats passent par l'App Store ou Google Play. Pour gérer ou résilier un abonnement, utilisez les réglages d'abonnement de votre identifiant Apple ou de Google Play. Les remboursements sont gérés par Apple ou Google selon leurs règles ; nous ne pouvons pas les effectuer nous-mêmes. <span class="flag">à confirmer une fois le prix fixé</span></p>
+        </div>
+        <div class="qa-item">
+          <h3>Quelles langues hugr parle-t-il ?</h3>
+          <p>L'anglais au lancement. Le français et le néerlandais suivent.</p>
+        </div>
+        <div class="qa-item">
+          <h3>Quelque chose ne fonctionne pas sur ce site.</h3>
+          <p>Écrivez-nous à support@byhugr.io en précisant votre appareil, la version de votre système et ce qui s'est passé. Les captures d'écran aident.</p>
+        </div>
       </div>
     </div></div>
   </article>
@@ -674,6 +792,11 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
   var WAITLIST = {
     endpoint: 'https://script.google.com/macros/s/AKfycbyxmP6TdeW2OI8558tpZfY-6mjuSqOTTqi4NNIgWxOLFaYur8bpDIN2f-CR5AEET6a6bw/exec',
     siteUrl: 'https://byhugr.io/fr/',   // l'adresse de la page française ; le code QR imprimé pointe ici
+    countStoryOpens: false,         // [DECISION, Sophie] off: with this false no request leaves
+                                    // the page when the story is opened, and the privacy policy's
+                                    // no-analytics sentence stands unchanged. Turning it on also
+                                    // means changing that sentence in section 3 of the policy, in
+                                    // both languages, and adding the events tab to the Apps Script.
     base: '/fr'
   };
   /* ======================================================== */
@@ -707,8 +830,10 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       document.querySelectorAll('nav a[data-route]').forEach(function (a) {
         if (a.dataset.route === navR) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
       });
+      var alt = document.querySelector('nav a.lang');
+      if (alt) alt.href = alt.dataset.base + (location.hash || '');
       if (r.path === '/card') drawCard();
-      if (r.path === '/') startConvoWhenVisible();
+      if (r.path === '/') { reserveConvo(); startConvoWhenVisible(); }
       window.scrollTo(0, 0);
     }
 
@@ -785,7 +910,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         var btn = moreForm.querySelector('.more-go');
         var msg = moreForm.querySelector('.more-done');
         btn.disabled = true; btn.textContent = 'Enregistrement';
-        post({ stage: 'profile', email: joinedEmail, first_name: name.slice(0, 80), language: lang })
+        post({ stage: 'profile', email: joinedEmail, first_name: name.slice(0, 80), language: lang, page_language: 'fr' })
           .then(function () { moreForm.querySelectorAll('input,button').forEach(function (el) { el.disabled = true; }); msg.hidden = false; })
           .catch(function () { btn.disabled = false; btn.textContent = 'Enregistrer'; msg.hidden = false; msg.textContent = "Votre e-mail est bien noté. Nous n'avons pas pu enregistrer ces précisions, mais ce n'est pas grave."; });
       });
@@ -799,6 +924,27 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 
     function dots() { return '<span class="dots"><i></i><i></i><i></i></span>'; }
     function reduced() { return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+
+    /* ---------- reserve the preview's final height, so nothing below it moves ---------- */
+    function reserveConvo() {
+      var c = document.getElementById('convo'); if (!c) return;
+      var t = c.cloneNode(true); t.removeAttribute('id'); t.setAttribute('aria-hidden', 'true');
+      t.style.cssText = 'position:absolute;left:0;right:0;visibility:hidden;pointer-events:none;min-height:0';
+      t.querySelectorAll('[id]').forEach(function (n) { n.removeAttribute('id'); });
+      t.querySelectorAll('.msg').forEach(function (m) { m.classList.add('show'); });
+      t.querySelector('.msg.you .bubble').textContent = PERSON;
+      t.querySelectorAll('.msg.hugr .bubble')[1].textContent = HUGR2;
+      c.parentNode.insertBefore(t, c);
+      c.style.minHeight = t.offsetHeight + 'px';
+      t.remove();
+    }
+    var reserveTimer = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(reserveTimer);
+      reserveTimer = setTimeout(reserveConvo, 150);
+    });
+    /* the fonts are inlined, but measuring before they are applied would under-reserve */
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(reserveConvo); }
 
     function startConvoWhenVisible() {
       var convo = document.getElementById('convo');
@@ -840,6 +986,32 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       }, 2300);
     }
 
+    /* ---------- l'histoire : courte par défaut, entière sur demande ---------- */
+    var storyCounted = false;
+    function countStoryOpen() {
+      if (!WAITLIST.countStoryOpens || storyCounted || !navigator.sendBeacon || !WAITLIST.endpoint) return;
+      storyCounted = true;
+      var body = new Blob([JSON.stringify({ stage: 'event', name: 'story_open', page_language: document.documentElement.lang })], { type: 'text/plain;charset=utf-8' });
+      navigator.sendBeacon(WAITLIST.endpoint, body);
+    }
+    function initStory() {
+      var btn = document.querySelector('.story-more'); if (!btn) return;
+      var shortText = document.querySelector('.story-text[data-story="short"]');
+      var fullText = document.querySelector('.story-text[data-story="full"]');
+      if (!shortText || !fullText) return;
+      btn.addEventListener('click', function () {
+        var opening = fullText.hidden;
+        fullText.hidden = !opening;
+        shortText.hidden = opening;
+        btn.setAttribute('aria-expanded', opening ? 'true' : 'false');
+        btn.textContent = opening ? 'Réduire' : 'Lire la suite';
+        var shown = opening ? fullText : shortText;
+        if (!reduced()) { shown.classList.remove('story-fade'); void shown.offsetWidth; shown.classList.add('story-fade'); }
+        if (opening) countStoryOpen();
+        else { var sec = btn.closest('section'); if (sec) sec.scrollIntoView({ block: 'nearest' }); }
+      });
+    }
+
     /* ---------- carte imprimable ---------- */
     var drawn = false;
     function drawCard() {
@@ -854,6 +1026,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       } catch (e) { document.getElementById('card-qr').textContent = url; }
     }
 
+    initStory();
     window.addEventListener('hashchange', route);
     route();
   })();
