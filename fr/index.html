@@ -372,9 +372,9 @@
         </div>
         <div class="confirm" hidden>
           <p class="confirm-lead">Nous vous écrirons à <span class="em confirm-email"></span> quand hugr ouvrira.<a href="#" class="confirm-change">modifier</a></p>
-          <label class="check"><input type="checkbox" name="consent"><span>J'ai 18 ans ou plus, et j'accepte de recevoir cet e-mail. <a href="#/privacy">Confidentialité</a></span></label>
+          <label class="check"><input type="checkbox" name="consent"><span>J'ai 18 ans ou plus, et j'accepte de recevoir des e-mails de hugr. <a href="#/privacy">Confidentialité</a></span></label>
           <button class="btn confirm-go" type="submit">Oui, inscrivez-moi</button>
-          <p class="fine">Un seul e-mail, quand hugr ouvrira. Rien d'autre, et un clic suffit pour vous désinscrire.</p>
+          <p class="fine">Un clic dans n'importe lequel de nos e-mails vous retire de la liste.</p>
         </div>
         <div class="hp" aria-hidden="true"><label>Laissez ce champ vide <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
         <p class="err" role="alert"></p>
@@ -552,9 +552,9 @@
         </div>
         <div class="confirm" hidden>
           <p class="confirm-lead">Nous vous écrirons à <span class="em confirm-email"></span> quand hugr ouvrira.<a href="#" class="confirm-change">modifier</a></p>
-          <label class="check"><input type="checkbox" name="consent"><span>J'ai 18 ans ou plus, et j'accepte de recevoir cet e-mail. <a href="#/privacy">Confidentialité</a></span></label>
+          <label class="check"><input type="checkbox" name="consent"><span>J'ai 18 ans ou plus, et j'accepte de recevoir des e-mails de hugr. <a href="#/privacy">Confidentialité</a></span></label>
           <button class="btn confirm-go" type="submit">Oui, inscrivez-moi</button>
-          <p class="fine">Un seul e-mail, quand hugr ouvrira. Rien d'autre, et un clic suffit pour vous désinscrire.</p>
+          <p class="fine">Un clic dans n'importe lequel de nos e-mails vous retire de la liste.</p>
         </div>
         <div class="hp" aria-hidden="true"><label>Laissez ce champ vide <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
         <p class="err" role="alert"></p>
@@ -632,7 +632,7 @@
         <div class="tablewrap"><table>
           <thead><tr><th>Quoi</th><th>Pourquoi</th><th>Base légale</th><th>Conservé</th></tr></thead>
           <tbody>
-            <tr><td>Liste d'attente : votre adresse e-mail ; si vous choisissez de les ajouter, votre prénom et votre langue préférée ; l'endroit où vous vous êtes inscrit (le site ou une carte imprimée) ; et la date et l'heure de votre consentement</td><td>Pour vous prévenir quand hugr ouvrira, dans votre langue.</td><td>Consentement, retirable à tout moment</td><td>Jusqu'à l'ouverture de hugr et notre e-mail, ou jusqu'à ce que vous demandiez à être retiré, selon ce qui arrive en premier. Ensuite, la liste est supprimée.</td></tr>
+            <tr><td>Liste d'attente : votre adresse e-mail ; si vous choisissez de les ajouter, votre prénom et votre langue préférée ; l'endroit où vous vous êtes inscrit (le site ou une carte imprimée) ; et la date et l'heure de votre consentement</td><td>Pour vous écrire au sujet de hugr, dans votre langue.</td><td>Consentement, retirable à tout moment</td><td>Jusqu'à ce que vous demandiez à être retiré.</td></tr>
             <tr class="app-era"><td>Compte : adresse e-mail, mot de passe (stocké haché), date de création du compte <span class="flag">méthode de connexion à confirmer</span></td><td>Pour créer votre compte, vous connecter et vous joindre à son sujet.</td><td>Contrat</td><td>Jusqu'à la suppression de votre compte.</td></tr>
             <tr class="app-era"><td>Confirmation d'âge (que vous avez 18 ans ou plus ; nous ne stockons pas votre date de naissance) <span class="flag">à confirmer</span></td><td>hugr s'adresse aux adultes.</td><td>Obligation légale, intérêt légitime</td><td>Jusqu'à la suppression de votre compte.</td></tr>
             <tr class="app-era"><td>Ce que vous dites à hugr pendant une session</td><td>Pour que hugr puisse vous répondre. Vos mots sont envoyés au modèle d'IA qui génère la réponse de hugr (section 4). Nous ne conservons pas le texte brut après la session (section 5). <span class="flag">gestion des sessions à confirmer</span></td><td>Consentement, retirable à tout moment</td><td>Texte brut : pas conservé au-delà de la session. <span class="flag">à confirmer</span></td></tr>
@@ -890,7 +890,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           stage: 'join', email: joinedEmail,
           source: cleanSource(params.from) || 'website-fr',
           adult: true, consent: true,
-          consent_text: "J'ai 18 ans ou plus, et j'accepte de recevoir cet e-mail.",
+          consent_text: "J'ai 18 ans ou plus, et j'accepte de recevoir des e-mails de hugr.",
           signed_up_at: new Date().toISOString(),
           page_language: 'fr'
         };

@@ -366,9 +366,9 @@
         </div>
         <div class="confirm" hidden>
           <p class="confirm-lead">We will write to <span class="em confirm-email"></span> when hugr opens.<a href="#" class="confirm-change">change</a></p>
-          <label class="check"><input type="checkbox" name="consent"><span>I am 18 or older, and happy to receive that one email. <a href="#/privacy">Privacy</a></span></label>
+          <label class="check"><input type="checkbox" name="consent"><span>I am 18 or older, and happy to hear from hugr by email. <a href="#/privacy">Privacy</a></span></label>
           <button class="btn confirm-go" type="submit">Add me to the list</button>
-          <p class="fine">One email, when hugr opens. Nothing else, and one click takes you off the list.</p>
+          <p class="fine">One click in any email takes you off the list.</p>
         </div>
         <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
         <p class="err" role="alert"></p>
@@ -546,9 +546,9 @@
         </div>
         <div class="confirm" hidden>
           <p class="confirm-lead">We will write to <span class="em confirm-email"></span> when hugr opens.<a href="#" class="confirm-change">change</a></p>
-          <label class="check"><input type="checkbox" name="consent"><span>I am 18 or older, and happy to receive that one email. <a href="#/privacy">Privacy</a></span></label>
+          <label class="check"><input type="checkbox" name="consent"><span>I am 18 or older, and happy to hear from hugr by email. <a href="#/privacy">Privacy</a></span></label>
           <button class="btn confirm-go" type="submit">Add me to the list</button>
-          <p class="fine">One email, when hugr opens. Nothing else, and one click takes you off the list.</p>
+          <p class="fine">One click in any email takes you off the list.</p>
         </div>
         <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
         <p class="err" role="alert"></p>
@@ -626,7 +626,7 @@
         <div class="tablewrap"><table>
           <thead><tr><th>What</th><th>Why</th><th>Legal basis</th><th>Kept for</th></tr></thead>
           <tbody>
-            <tr><td>Waitlist: your email address; if you choose to add them, your first name and preferred language; where you signed up (the website or a printed card); and the date and time of your consent</td><td>To tell you when hugr opens, in your language.</td><td>Consent, withdrawable at any time</td><td>Until hugr opens and we have written to you, or until you ask to be removed, whichever comes first. Then the list is deleted.</td></tr>
+            <tr><td>Waitlist: your email address; if you choose to add them, your first name and preferred language; where you signed up (the website or a printed card); and the date and time of your consent</td><td>To write to you about hugr, in your language.</td><td>Consent, withdrawable at any time</td><td>Until you ask to be removed.</td></tr>
             <tr class="app-era"><td>Account: email address, password (stored hashed), account creation date <span class="flag">to confirm sign-in method</span></td><td>To create your account, sign you in, and reach you about your account.</td><td>Contract</td><td>Until you delete your account.</td></tr>
             <tr class="app-era"><td>Age confirmation (that you are 18 or older; we do not store your date of birth) <span class="flag">to confirm</span></td><td>hugr is for adults.</td><td>Legal obligation, legitimate interest</td><td>Until you delete your account.</td></tr>
             <tr class="app-era"><td>What you say to hugr during a session</td><td>So hugr can respond to you. Your words are sent to the AI model that generates hugr's response (section 4). We do not keep the raw text after the session (section 5). <span class="flag">to confirm session handling</span></td><td>Consent, withdrawable at any time</td><td>Raw text: not stored beyond the session. <span class="flag">to confirm</span></td></tr>
@@ -882,7 +882,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
           stage: 'join', email: joinedEmail,
           source: cleanSource(params.from) || 'website',
           adult: true, consent: true,
-          consent_text: "I am 18 or older, and happy to receive that one email.",
+          consent_text: "I am 18 or older, and happy to hear from hugr by email.",
           signed_up_at: new Date().toISOString(),
           page_language: 'en'
         };
