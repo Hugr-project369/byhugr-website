@@ -13,8 +13,31 @@
 <meta name="theme-color" content="#0a0a0f">
 <!-- Marks the page as scripted before anything paints, so the conversation
      below can sit in the markup and still animate. No script, no class,
-     and the finished conversation simply stays on screen. -->
-<script>document.documentElement.className += ' js';</script>
+     and the finished conversation simply stays on screen.
+
+     It also catches French deep links. Cloudflare answers /fr/<route> with this
+     English document whatever _redirects says (tested 25 Sept), so a shared link
+     to /fr/privacy would otherwise show the English site. Send it on before
+     anything paints. Delete this block if /fr/* ever starts working. -->
+<script>
+document.documentElement.className += ' js';
+(function () {
+  var m = location.pathname.match(/^\/fr(\/.*)?$/);
+  if (!m) return;
+  /* both pages route on English keys; the French spellings are accepted here */
+  var ROUTES = { '/privacy': 1, '/support': 1, '/waitlist': 1, '/download': 1, '/card': 1 };
+  var ALIAS = {
+    '/confidentialite': '/privacy', '/aide': '/support',
+    '/liste-d-attente': '/waitlist', '/telecharger': '/download', '/carte': '/card'
+  };
+  var route = '/';
+  try { route = decodeURIComponent(m[1] || '/'); } catch (e) { route = m[1] || '/'; }
+  route = route.replace(/\/+$/, '').toLowerCase() || '/';
+  route = ALIAS[route] || route;
+  var target = '/fr/' + (location.hash || (ROUTES[route] ? '#' + route : ''));
+  if (target !== location.pathname + location.hash) location.replace(target);
+})();
+</script>
 
 <!-- Icons: the door set, at the site root, shared by EN and FR. -->
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
