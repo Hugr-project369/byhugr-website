@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07080e" />    <title>Hugr — Questions</title>
+    <meta name="description" content="" />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="./assets/clash-display-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./fonts.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./header.css" />
+    <style>
+      .questions-page .site-header { position: relative; }
+      .questions-page main { padding: 30px 0 10px; }
+      .questions-page .faq.section { min-height: auto; }
+      .questions-page .faq-heading { max-width: 720px; }
+      #faq-h1 { font: 400 clamp(2rem, 4.2vw, 2.9rem)/1.15 var(--display, "Clash Display", Georgia, serif); letter-spacing: -0.02em; margin: 0 0 12px; color: var(--text, #f1eee6); }
+      #faq-h1 em { font-style: italic; color: var(--gold, #d9b879); }
+      #faq-intro { color: var(--muted, #b1abb9); margin: 0 0 20px; }
+      .faq-back { margin-top: 38px; }
+    </style>
+    <script type="module" src="./questions.js"></script>
+  </head>
+  <body class="questions-page">
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+    <header class="site-header wrap" id="top">
+      <a class="wordmark" href="index.html" data-target="top" aria-label="Hugr home">HU<span>G</span>R</a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="index.html" data-target="experience" data-i18n="navExperience">The experience</a>
+        <a href="index.html" data-target="story" data-i18n="navStory">Our story</a>
+        <a href="questions.html" data-target="questions" data-nav="questions" data-i18n="navQuestions" aria-current="page">Your questions</a>
+      </nav>
+      <div class="header-end">
+        <div class="languages" role="group" aria-label="Language">
+          <button type="button" lang="en" data-lang="en" aria-label="English" aria-pressed="true">EN</button>
+          <button type="button" lang="fr" data-lang="fr" aria-label="Français" aria-pressed="false">FR</button>
+          <button type="button" lang="nl" data-lang="nl" aria-label="Nederlands" aria-pressed="false">NL</button>
+        </div>
+        <a class="button button-small" href="index.html" data-target="join"><span data-i18n="navJoin">Meet Hugr</span><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="faq section wrap" id="questions">
+        <div class="faq-heading">
+          <h1 id="faq-h1"></h1>
+          <p id="faq-intro"></p>
+          <a class="small-link" href="mailto:hello@byhugr.io" data-i18n="faqContact">Something else?</a>
+        </div>
+        <div class="faq-list" id="faq-list"></div>
+        <p class="faq-back"><a class="small-link" href="index.html" data-target="top" id="faq-back">Back to home</a></p>
+      </section>
+    </main>
+    <div id="page-footer"></div>
+    <dialog id="info-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-toolbar">
+        <button type="button" class="dialog-close" aria-label="Close">×</button>
+      </div>
+      <div id="dialog-content"></div>
+    </dialog>
+  </body>
+</html>

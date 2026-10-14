@@ -1,17 +1,15 @@
-# Cloudflare Pages redirects for the hugr site.
-#
-# Tested against the live domain on 25 September. The per-path rules that used
-# to sit here (/privacy, /support, /waitlist, /download, /card, /fr) were NOT
-# doing what they say: Cloudflare answered each of them with a 308 to "/", so
-# byhugr.io/privacy landed on the homepage instead of the policy. They are gone.
-# Only the catch-all below was ever doing the work, and it does it correctly:
-# it serves the single-page app, whose router reads the path and shows the
-# matching page (/privacy, /support, /waitlist, /download, /card).
-#
-# /fr/ resolves on its own, because fr/index.html is a real file.
-# The /fr/* rule is kept so French deep links can be re-tested now that the
-# rules above it are out of the way; if /fr/privacy still answers in English
-# after this deploy, the fix is a real file, not a rule.
-
-/fr/*       /fr/index.html   200
-/*          /index.html      200
+/privacy            /legal.html      200
+/support            /legal.html      200
+/confidentialite    /legal.html      200
+/aide               /legal.html      200
+/download           /legal.html      200
+/card               /legal.html      200
+/fr/privacy         /fr/legal.html   200
+/fr/support         /fr/legal.html   200
+/fr/confidentialite /fr/legal.html   200
+/fr/aide            /fr/legal.html   200
+/fr/download        /fr/legal.html   200
+/fr/card            /fr/legal.html   200
+/fr/*   /?lang=fr   301
+/nl/*   /?lang=nl   301
+/*      /index.html 200

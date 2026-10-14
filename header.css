@@ -1,0 +1,27 @@
+/* A protected, living connection inside the Halo V3. */
+:root{--header-height:clamp(68px,10svh,90px);--hero-tail:26px;--halo-radius:140px}
+.site-header{height:var(--header-height);background:transparent;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.hero{padding:0 24px var(--hero-tail);min-height:calc(100svh - var(--header-height));isolation:isolate;overflow:visible;background:linear-gradient(#030407 76%,#07080e)}
+.hero-motion{position:absolute;inset:calc(-1 * var(--header-height)) 0 0;z-index:0;pointer-events:none;overflow:hidden;background:#030407;mask-image:linear-gradient(#000 0%,#000 var(--halo-clear,65%),transparent var(--halo-text,85%))}
+.hero-motion canvas{display:block;width:100%;height:100%;position:absolute;inset:0}
+.hero-copy{display:grid;grid-template-rows:minmax(140px,1fr) auto auto auto auto auto;align-content:center;justify-items:center;gap:clamp(6px,1.15svh,12px);height:calc(100svh - var(--header-height) - var(--hero-tail));min-height:450px;margin:0 auto;width:min(1180px,100%);position:relative;z-index:1}
+.hero-identity{display:block;position:relative;width:100%;height:100%;min-height:140px;margin:0;max-width:none}
+.halo-word{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:calc(var(--halo-radius)*1.4);height:calc(var(--halo-radius)*.85);padding:0;border:0;border-radius:50%;background:none;display:grid;place-items:center;cursor:pointer;touch-action:pan-y;color:#f1e6d0;-webkit-tap-highlight-color:transparent}
+.halo-word:focus-visible{outline:1px dotted #d8b97c80;outline-offset:22px}
+.halo-word-inner{display:grid;place-items:center;gap:12px;font:500 clamp(30px,calc(var(--halo-radius)*.37),68px)/1 var(--display);letter-spacing:.005em;white-space:nowrap;text-shadow:0 0 26px #e3bc6140,0 0 64px #e3bc611c;will-change:opacity,transform;user-select:none;-webkit-user-select:none;pointer-events:none}
+.halo-brand{letter-spacing:-.055em}.halo-brand>span{color:#dfbb79;text-shadow:0 0 22px #e7c68f70,0 0 45px #e7c68f24}
+.halo-static{font-size:.3em;letter-spacing:.18em;color:#d1bc96}
+.hero h1{font-size:clamp(2rem,3.02vw,3rem);line-height:1.2;width:100%;max-width:none;margin:0;letter-spacing:-.025em;text-wrap:balance}
+.hero-description,html[lang="fr"] .hero-description{font-size:1rem;line-height:1.6;margin:0;max-width:780px;text-wrap:pretty;color:#bab3be}
+.hero-actions{margin:3px 0 0;gap:26px}.hero-actions .button{min-height:48px;padding:14px 24px}
+.hero-note{margin:0;font-size:.72rem;line-height:1.5}
+.store-preview{margin:0;gap:5px}.store-badges{gap:10px}
+
+.halo-static-fallback .hero-identity:before,.halo-interrupted .hero-identity:before{content:"";position:absolute;width:calc(var(--halo-radius)*2);height:calc(var(--halo-radius)*2);left:50%;top:50%;transform:translate(-50%,-50%);border:1px dotted #d9b875;border-radius:50%}
+@media(min-width:901px) and (max-height:730px){:root{--header-height:64px;--hero-tail:22px}.hero-copy{gap:6px;min-height:430px}.hero h1{font-size:clamp(1.85rem,2.8vw,2.6rem)}.hero-description,html[lang="fr"] .hero-description{font-size:.94rem;line-height:1.5}.hero-actions .button{min-height:44px;padding-block:11px}.store-preview{gap:3px}}
+@media(max-width:900px){.hero-copy{height:auto;min-height:calc(100svh - var(--header-height) - var(--hero-tail));grid-template-rows:minmax(210px,1fr) auto auto auto auto auto}.hero-identity{min-height:210px}.hero h1{font-size:clamp(1.8rem,4.2vw,2.5rem)}}
+@media(max-width:650px){:root{--header-height:76px;--hero-tail:24px}.site-header{height:var(--header-height);background:transparent;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}.hero{padding:0 20px var(--hero-tail)}.hero-copy{gap:12px}.hero-identity{min-height:206px}.hero h1{width:100%;margin:0;font-size:clamp(1.75rem,7.2vw,2.05rem);line-height:1.2}.hero-description,html[lang="fr"] .hero-description{font-size:1rem;line-height:1.6;margin:0;max-width:430px}.hero-actions{gap:10px;margin:3px 0 0}.hero-note{font-size:.7rem}.halo-word-inner{font-size:clamp(32px,calc(var(--halo-radius)*.4),52px)}}
+@media(prefers-reduced-motion:reduce){.halo-word-inner{will-change:auto}}
+/* First-load: start the hero wordmark hidden so it fades in cleanly when the scene initialises, instead of flashing in from the static mark. The motion canvas is left to render as soon as it can (no gating), so the scene is not blanked while it loads. */
+.halo-word-inner{opacity:0}
+@media(prefers-reduced-motion:reduce){.halo-word-inner{opacity:1}}
