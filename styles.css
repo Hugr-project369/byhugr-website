@@ -2572,3 +2572,61 @@ html[lang="fr"] .join h2 {
 #conception .section-intro p{line-height:1.9}
 /* §02 closing pull-quote — a gold full-stop after the body */
 .conception-close{font-family:var(--display);font-weight:400;font-size:clamp(1.3rem,1.8vw,1.75rem);color:var(--gold);line-height:1.3;margin:24px auto 0;max-width:640px}
+
+/* Waitlist success — full confirmation screen (replaces the form on submit) */
+.waitlist-intro.is-confirmed {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+}
+.waitlist-intro.is-confirmed .threshold-light {
+  margin: 0 auto 30px;
+}
+.waitlist-done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  animation: done-rise 0.6s var(--ease) both;
+}
+.done-halo {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  color: var(--gold-bright);
+}
+.done-halo .done-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dotted #d9b879a6;
+  box-shadow: 0 0 36px #e8c98436, inset 0 0 22px #e8c98422;
+  animation: done-ring-in 0.8s var(--ease) both;
+}
+.done-halo svg {
+  width: 31px;
+  height: 31px;
+}
+.done-text {
+  font: 400 clamp(1.3rem, 5vw, 1.6rem) / 1.4 var(--display);
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0;
+  max-width: 380px;
+  text-wrap: balance;
+}
+@keyframes done-rise {
+  from { opacity: 0; transform: translateY(10px); }
+}
+@keyframes done-ring-in {
+  from { opacity: 0; transform: scale(0.6); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .waitlist-done,
+  .done-halo .done-ring { animation: none; }
+}

@@ -297,8 +297,19 @@ function renderDialog(kind) {
         body: JSON.stringify(data),
       })
         .then(() => {
-          form.classList.add("preview-sent");
-          feedback.textContent = c.waitlistSuccess;
+          const intro = dialog.querySelector(".waitlist-intro");
+          if (intro) {
+            intro.classList.add("is-confirmed");
+            intro.innerHTML =
+              `<span class="threshold-light" aria-hidden="true"></span>` +
+              `<div class="waitlist-done" role="status" aria-live="polite">` +
+              `<span class="done-halo" aria-hidden="true"><span class="done-ring"></span>` +
+              `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>` +
+              `<p class="done-text">${c.waitlistSuccess}</p></div>`;
+          } else {
+            form.classList.add("preview-sent");
+            feedback.textContent = c.waitlistSuccess;
+          }
         })
         .catch(() => {
           submit.disabled = false;
