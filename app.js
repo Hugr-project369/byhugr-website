@@ -7,9 +7,12 @@ let destroyAlignments = () => {};
 let homeHero;
 
 const params = new URLSearchParams(location.search);
+const docLang = (document.documentElement.getAttribute("lang") || "").slice(0, 2);
 let locale = Object.hasOwn(copy, params.get("lang"))
   ? params.get("lang")
-  : "en";
+  : Object.hasOwn(copy, docLang)
+    ? docLang
+    : "en";
 let activeDialog = null;
 let replayTimers = [];
 let conversationObserver;

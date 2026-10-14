@@ -10,4 +10,6 @@
 /fr/aide            /fr/legal.html   200
 /fr/download        /fr/legal.html   200
 /fr/card            /fr/legal.html   200
+/fr                 /fr/index.html   200
+/fr/                /fr/index.html   200
 /*                  /index.html      200

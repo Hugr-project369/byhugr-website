@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07080e" />    <title>Hugr — Un espace pour être vous-même</title>
+    <meta
+      name="description"
+      content="Un compagnon IA qui vous accueille comme vous êtes. Pour y voir plus clair et vous retrouver. Bientôt sur iPhone et Android."
+    />
+    <link rel="canonical" href="https://byhugr.io/fr" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hugr" />
+    <meta property="og:locale" content="fr_BE" />
+    <meta property="og:url" content="https://byhugr.io/fr" />
+    <meta property="og:title" content="Hugr — Un espace pour être vous-même" />
+    <meta
+      property="og:description"
+      content="Un compagnon IA qui vous accueille comme vous êtes. Pour y voir plus clair et vous retrouver. Bientôt sur iPhone et Android."
+    />
+    <meta property="og:image" content="https://byhugr.io/og-fr.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Hugr" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hugr — Un espace pour être vous-même" />
+    <meta
+      name="twitter:description"
+      content="Un compagnon IA qui vous accueille comme vous êtes. Pour y voir plus clair et vous retrouver. Bientôt sur iPhone et Android."
+    />
+    <meta name="twitter:image" content="https://byhugr.io/og-fr.png" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/assets/clash-display-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/fonts.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/header.css" />
+    <script type="importmap">{"imports":{"three":"/halo/vendor/three.module.js"}}</script>
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <div class="universe" aria-hidden="true">
+      <canvas id="presence"></canvas>
+      <div class="universe-vignette"></div>
+    </div>
+    <div class="reading-progress" aria-hidden="true"></div>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+    <header class="site-header wrap" id="top">
+      <a class="wordmark" href="#top" aria-label="Hugr home"
+        >HU<span>G</span>R</a
+      >
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#experience" data-i18n="navExperience">The experience</a>
+        <a href="#story" data-i18n="navStory">Our story</a>
+        <a href="questions.html" data-i18n="navQuestions" data-nav="questions">Your questions</a>
+      </nav>
+      <div class="header-end">
+        <div class="languages" role="group" aria-label="Language">
+          <button
+            type="button"
+            lang="en"
+            data-lang="en"
+            aria-label="English"
+            aria-pressed="true"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            lang="fr"
+            data-lang="fr"
+            aria-label="Français"
+            aria-pressed="false"
+          >
+            FR
+          </button>
+          <button
+            type="button"
+            lang="nl"
+            data-lang="nl"
+            aria-label="Nederlands"
+            aria-pressed="false"
+          >
+            NL
+          </button>
+        </div>
+        <button
+          type="button"
+          class="button button-small"
+          data-dialog="waitlist"
+        >
+          <span data-i18n="navJoin">Meet Hugr</span
+          ><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg>
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero-motion" aria-hidden="true"><canvas id="hero-space"></canvas></div>
+        <div class="hero-copy">
+          <div class="hero-identity" id="halo-anchor">
+            <button id="halo-word" class="halo-word" type="button" aria-label="Hugr and you. Hold to slow time."><span class="halo-word-inner" aria-hidden="true"><span class="halo-brand">HU<span>G</span>R</span></span></button>
+          </div>
+          <h1 id="hero-title" data-i18n="sourceHeroTitle">
+            A companion that meets you as you are.
+          </h1>
+          <p class="hero-description" data-i18n="sourceHeroSubtitle">
+            To clear the noise and see yourself again.
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="button" data-dialog="waitlist">
+              <span data-i18n="join">Join the waitlist</span
+              ><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></button
+            ><a class="text-link" href="#experience"
+              ><span data-i18n="discover">Feel the difference</span
+              ><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v16M6 14l6 6 6-6"/></svg></a
+            >
+          </div>
+          <p class="hero-note" data-i18n="heroNote">
+            An AI companion. Coming to iPhone & Android.
+          </p>
+          <div id="store-preview" class="store-preview"></div>
+        </div>
+      </section>
+      <div id="page-sections"></div>
+    </main>
+    <div id="page-footer"></div>
+    <dialog id="info-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-toolbar">
+        <button type="button" class="dialog-close" aria-label="Close">×</button>
+      </div>
+      <div id="dialog-content"></div>
+    </dialog>
+    <noscript
+      ><div class="noscript-message">
+        Hugr is an AI companion for adults. This preview needs JavaScript to
+        show all three languages.
+        <a href="https://byhugr.io/fr">Visit the official Hugr website</a>.
+      </div></noscript
+    >
+  </body>
+</html>
