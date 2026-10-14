@@ -465,7 +465,7 @@ export function createPresence(canvas) {
   function frame(now) {
     raf = 0;
     if (paused || !active || disposed || document.hidden || lost) return;
-    if (now - last < 1000 / 60 - 1) { raf = requestAnimationFrame(frame); return; }
+    if (now - last < 1000 / 40 - 1) { raf = requestAnimationFrame(frame); return; }
     const dt = Math.min((now - last) / 1000, .05); last = now; time += dt * (modal ? .55 : 1);
     scroll += (scrollTarget - scroll) * (1 - Math.exp(-dt * 1.4));
     const follow = 1 - Math.exp(-dt * 2.7);
@@ -482,7 +482,7 @@ export function createPresence(canvas) {
   function resize() {
     const box = canvas.getBoundingClientRect(); width = box.width; height = box.height;
     if (width < 2 || height < 2) return;
-    const dpr = Math.min(devicePixelRatio || 1, width < 700 ? 1.75 : 2);
+    const dpr = Math.min(devicePixelRatio || 1, width < 700 ? 1.75 : 1.5);
     canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     background.width = canvas.width; background.height = canvas.height;
