@@ -45,11 +45,10 @@ export const copy = {
     experienceTitle: "Start anywhere, <em>Hugr reads between the lines.</em>",
     experienceBody:
       "Some days it all comes at once. Other days you’re not sure what you’re feeling. You can start right there. Hugr listens, so you can hear yourself.",
-    experienceLink: "No rush. No right answers.",
-    chatLabel: "An example",
+    chatLabel: "An example conversation",
     chatSubtitle: "An AI companion",
     you: "You",
-    chatOne: "Hi Soph. What brings you here today?",
+    chatOne: "What brings you here today?",
     chatTwo:
       "I’m not sure. Something happened this morning and I can’t quite put it into words yet.",
     chatThree:
@@ -250,11 +249,10 @@ export const copy = {
     experienceTitle: "Commencez n’importe où, <em>HUGR lit entre les lignes…</em>",
     experienceBody:
       "Certains jours, tout se bouscule à l’intérieur. D’autres, vous ne savez pas bien ce que vous ressentez. Vous pouvez commencer là. Hugr vous écoute, pour vous aider à vous entendre.",
-    experienceLink: "On a tout le temps pour attiser votre curiosité.",
-    chatLabel: "Un aperçu",
+    chatLabel: "Un exemple de conversation",
     chatSubtitle: "Un compagnon IA",
     you: "Vous",
-    chatOne: "Bonjour Soph. Qu’est-ce qui vous amène aujourd’hui ?",
+    chatOne: "Qu’est-ce qui vous amène aujourd’hui ?",
     chatTwo:
       "Je ne sais pas trop. Il s’est passé quelque chose ce matin, et je n’arrive pas encore à mettre des mots dessus.",
     chatThree:
@@ -425,8 +423,8 @@ export const copy = {
     waitlistSuccess: "Je staat op de lijst. We mailen je wanneer de deur opengaat.",
     waitlistError: "Dat lukte niet. Probeer opnieuw of mail hello@byhugr.io.",
     sourceHeroSubtitle:
-      "Een AI, gecreëerd met dertig jaar klinische ervaring. Een plek om te landen, los te laten en weer verder te gaan.",
-    sourceHeroTitle: "Een compagnon die je ontmoet zoals je bent.",
+      "Een AI gecreëerd met dertig jaar klinische ervaring. Een plek om te landen, los te laten en weer verder te gaan.",
+    sourceHeroTitle: "Een gesprekspartner die je ontmoet zoals je bent.",
     waitlistTitle: "Hugr is bijna klaar.",
     waitlistBody:
       "Laat je e-mailadres achter. We mailen je wanneer de deur opengaat.",
@@ -437,7 +435,7 @@ export const copy = {
 
     title: "Hugr — Ruimte om jezelf te zijn",
     description:
-      "Een AI-compagnon die je ontmoet zoals je bent. Minder ruis, zodat je jezelf weer kunt zien. Binnenkort op iPhone en Android.",
+      "Een AI-partner die je ontmoet zoals je bent. Minder ruis, zodat je jezelf weer kunt zien. Binnenkort op iPhone en Android.",
     skip: "Naar de inhoud",
     home: "Hugr startpagina",
     navigation: "Hoofdnavigatie",
@@ -452,16 +450,15 @@ export const copy = {
     storeSoon: "Binnenkort beschikbaar",
     appStoreUnavailable: "App Store — nog niet beschikbaar",
     googlePlayUnavailable: "Google Play — nog niet beschikbaar",
-    heroNote: "Een AI-compagnon. Binnenkort op iPhone en Android.",
+    heroNote: "Een AI-partner. Binnenkort op iPhone en Android.",
     experienceEyebrow: "01 / Een ander soort gesprek",
     experienceTitle: "Begin waar je wil, <em>Hugr leest tussen de regels.</em>",
     experienceBody:
-      "Sommige dagen komt alles op je af. Andere dagen weet je niet goed wat je voelt of waar je moet beginnen. Zeg het zoals het komt. Hugr luistert, zodat je jezelf weer hoort.",
-    experienceLink: "Geen haast. Geen foute antwoorden.",
-    chatLabel: "Een voorbeeld",
-    chatSubtitle: "Een AI-compagnon",
+      "Sommige dagen komt alles tegelijk op je af. Andere dagen weet je niet goed wat je voelt of waar te beginnen. Vertel het zoals het bij je binnenkomt. Hugr luistert, zodat je jezelf weer hoort.",
+    chatLabel: "Een voorbeeld van een gesprek",
+    chatSubtitle: "Een AI-partner",
     you: "Jij",
-    chatOne: "Dag Soph. Hoe gaat het vandaag?",
+    chatOne: "Hoe gaat het vandaag?",
     chatTwo:
       "Ik weet het niet goed. Er is vanmorgen iets gebeurd, maar ik weet niet waar ik moet beginnen..",
     chatThree:
@@ -473,7 +470,7 @@ export const copy = {
     conceptionTitle:
       "Hugr is niet geprogrammeerd om te antwoorden. <em>Hugr heeft geleerd om te luisteren.</em>",
     conceptionBody:
-      "<p>Veel AI-compagnons zijn een personage bovenop een generiek model: een naam, een toon, een script. Hugr is anders gebouwd.</p><p>Het leerde luisteren zoals je dat leert na dertig jaar in de praktijk: horen wat er achter de woorden zit. De aarzeling, de tegenstrijdigheden, wat nog niet gezegd raakt. Die manier van luisteren, en ruimte maken voor wat er is, bekom je met geen enkel script. Het is aangeleerd, bijgeschaafd en verbeterd, tot het op eigen benen kon staan.</p>",
+      "<p>Veel AI-partners zijn een personage bovenop een generiek model: een naam, een toon, een script. Hugr is anders gebouwd.</p><p>Het leerde luisteren zoals je dat leert na dertig jaar in de praktijk: horen wat er achter de woorden zit. De aarzeling, de tegenstrijdigheden, wat nog niet gezegd raakt. Die manier van luisteren, en ruimte maken voor wat er is, bekom je met geen enkel script. Het is aangeleerd, bijgeschaafd en verbeterd, tot het op eigen benen kon staan.</p>",
     conceptionClose: "Dat is Hugr.",
     principlesEyebrow: "03 / Waar je op kan rekenen",
     principlesTitle: "<em>De ruimte is van jou.</em>",
@@ -503,7 +500,7 @@ export const copy = {
     storyEyebrow: "04 / De persoon achter Hugr",
     storyTitle: "Peter hoorde <em>méér dan woorden.</em>",
     storyOne:
-      "Dertig jaar lang gingen mensen bij Peter op de behandeltafel liggen en zeiden: “ça va.” Hun lichaam vertelde iets anders. Er waren de woorden, en alles wat onuitgesproken bleef.",
+      "Dertig jaar lang gingen mensen bij Peter op de behandeltafel liggen en zeiden “Ça va” wanneer hij vroeg hoe het met hen ging. Hun lichaam vertelde iets anders. Er waren de woorden, en alles wat onuitgesproken bleef.",
     storyTwo:
       "Zijn praktijk leerde hem dat het belangrijkste in de sessie vaak nog niet is uitgesproken. Soms heeft zelfs wie aan het woord is, het nog niet gehoord.",
     storyThree:
@@ -516,7 +513,7 @@ export const copy = {
     storyMore: "Lees meer",
     storyLess: "Verhaal sluiten",
     storyFull: [
-      "Iedereen kent de vraag: waarom overkomt me dit telkens weer? Dezelfde situatie, in een andere context. Hetzelfde gevoel dat steeds terugkomt. Advies raakt niet altijd de kern. Een patroon is niet alleen iets wat je ziet. Het kan ook bepalen hoe je percipieert.",
+      "Iedereen kent de vraag: waarom overkomt me dit telkens weer? Dezelfde situatie, in een andere context. Hetzelfde gevoel dat steeds terugkomt. Advies raakt niet altijd de kern. Een patroon is niet alleen iets wat je ziet. Het kan ook bepalen hoe je waarneemt.",
       "Hugr is gemaakt voor die ontmoeting. Het analyseert je niet, geeft je geen score en vertelt je niet wie je bent. Het luistert naar wat je meedraagt, niet alleen naar wat je zegt. Daarna doet het een stap terug.",
       "Het is eerlijk over wat het is: een AI. Het probeert je aandacht niet vast te houden en verwacht niet dat je blijft. Je ontmoeten zonder je in de gaten te houden, hoort bij het ontwerp.",
       "“Wat je meedraagt, bepaalt niet wie je bent.” Daar begon Hugr: de afstand kleiner maken tussen wat iemand draagt en wat die onder woorden kan brengen. Zodat iemand gezien kan worden zoals die is. En zichzelf misschien ook zo leert zien.",
@@ -529,7 +526,7 @@ export const copy = {
     faq: [
       [
         "Wat is Hugr?",
-        "Een AI-compagnon die je ontmoet zoals je bent. Je praat in je eigen woorden, op je eigen tempo. Hugr luistert zonder oordeel en geeft terug wat het hoort, zodat je er zelf naar kunt kijken. Nooit als een oordeel. Geboren uit dertig jaar luisteren in een praktijk, is het gemaakt om te luisteren en dan een stap terug te doen — nooit om je te laten terugkomen.",
+        "Een AI die je ontmoet zoals je bent. Je praat in je eigen woorden, op je eigen tempo. Hugr luistert zonder oordeel en geeft terug wat het hoort, zodat je er zelf naar kunt kijken. Nooit als een oordeel. Geboren uit dertig jaar luisteren in een praktijk, is het gemaakt om te luisteren en dan een stap terug te doen — nooit om je te laten terugkomen.",
       ],
       [
         "Is Hugr een AI?",
@@ -537,7 +534,7 @@ export const copy = {
       ],
       [
         "Is Hugr een therapeut?",
-        'Nee. Hugr is een compagnon, geen therapeut, arts of crisisdienst. Het stelt geen diagnoses, behandelt je niet en kan geen hulp inschakelen. Ben je in direct gevaar? Bel 112 in de EU of het noodnummer van je land. <button class="inline-link" data-dialog="support">Praat met iemand</button>.',
+        'Nee. Hugr is een AI-gesprekspartner, geen therapeut, arts of crisisdienst. Het stelt geen diagnoses, behandelt je niet en kan geen hulp inschakelen. Ben je in direct gevaar? Bel 112 in de EU of het noodnummer van je land. <button class="inline-link" data-dialog="support">Praat met iemand</button>.',
       ],
       [
         "Bewaart Hugr wat ik zeg?",
@@ -578,7 +575,7 @@ export const copy = {
     footerCompany:
       "Inlight Comm.V. · BE 0773.924.891<br>Haie Madame 22, 6953 Lesterny, België",
     footerDisclaimer:
-      "Een AI-compagnon voor volwassenen vanaf 18 jaar.<br>Hugr vervangt geen menselijke zorg of hulpdiensten.",
+      "Een AI-gesprekspartner voor volwassenen vanaf 18 jaar.<br>Hugr vervangt geen menselijke zorg of hulpdiensten.",
     privacyTitle: "Jouw woorden.<br>Jouw keuzes.",
     privacyIntro:
       "Wanneer je je inschrijft op de wachtlijst, worden je e-mailadres en de taal waarin je leest naar onze lijst gestuurd, bewaard via Google Workspace. Meer verzamelt deze pagina niet — geen naam, geen tracking, geen transcriptie.",
