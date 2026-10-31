@@ -126,11 +126,11 @@ export const copy = {
       ],
       [
         "Does Hugr keep what I say?",
-        'The experience described for launch does not keep a transcript. Between sessions, Hugr keeps a short picture, in its own words, of what has mattered to you. You can read, change or delete it. The full app privacy policy will explain how this works before you create an account. <button class="inline-link" data-dialog="privacy">About your privacy</button>.',
+        'Yes. Your conversations are kept, so you can come back and carry on where you left off. Between conversations, hugr also keeps some of your own words from them, exactly as you said them, so a new conversation doesn’t start from nothing. Delete a conversation and it goes, with everything hugr kept from it. The full privacy policy will explain all of this before you create an account. <button class="inline-link" data-dialog="privacy">About your privacy</button>.',
       ],
       [
         "Will it measure me or label me?",
-        "No mood graphs, progress rings or scores. No labels, types or categories. The picture Hugr keeps reflects what has mattered to you, never a verdict on who you are.",
+        "No mood graphs, progress rings or scores. No labels, types or categories. What hugr keeps is your own words, never a verdict on who you are.",
       ],
       [
         "Will it try to keep me hooked?",
