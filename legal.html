@@ -296,7 +296,7 @@ footer p{color:var(--muted);margin:4px 0}
 </footer>
 <script>
 /* /terms and /support land on this page; jump to the matching section. */
-(function(){var p=location.pathname.replace(/\/+$/,"").split("/").pop();var map={terms:"terms",conditions:"terms",voorwaarden:"terms",support:"support",aide:"support",hulp:"support"};if(!location.hash&&map[p]){var el=document.getElementById(map[p]);if(el)el.scrollIntoView();}})();
+(function(){var p=location.pathname.replace(/\/+$/,"").split("/").pop();var map={terms:"terms",conditions:"terms",voorwaarden:"terms",support:"support",aide:"support",hulp:"support"};var id=location.hash?decodeURIComponent(location.hash.slice(1)):map[p];if(!id)return;function go(){var el=document.getElementById(id);if(el)el.scrollIntoView();}go();window.addEventListener("load",go);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(go);})();
 </script>
 </body>
 </html>
