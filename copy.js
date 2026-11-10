@@ -126,11 +126,11 @@ export const copy = {
       ],
       [
         "Does Hugr keep what I say?",
-        'The experience described for launch does not keep a transcript. Between sessions, Hugr keeps a short picture, in its own words, of what has mattered to you. You can read, change or delete it. The full app privacy policy will explain how this works before you create an account. <button class="inline-link" data-dialog="privacy">About your privacy</button>.',
+        'Yes, so you can pick up where you left off. Your conversations stay in your history until you delete them. Hugr also remembers, in its own words, what has mattered to you, and you can tell it more yourself in In your words. Reset its memory and Hugr starts again from nothing. The app’s privacy policy explains it all before you create an account. <button class="inline-link" data-dialog="privacy">About your privacy</button>.',
       ],
       [
         "Will it measure me or label me?",
-        "No mood graphs, progress rings or scores. No labels, types or categories. The picture Hugr keeps reflects what has mattered to you, never a verdict on who you are.",
+        "No mood graphs, progress rings or scores. No labels, types or categories. What Hugr remembers reflects what has mattered to you, never a verdict on who you are.",
       ],
       [
         "Will it try to keep me hooked?",
@@ -190,10 +190,10 @@ export const copy = {
     supportUrgentTitle: "If you need help right now",
     supportUrgent:
       'Hugr is not an emergency service and cannot call for help. If you are in immediate danger in the EU, call <a href="tel:112">112</a>.',
-    supportLinesTitle: "Someone to talk to in Belgium",
+    supportLinesTitle: "Someone to talk to",
     supportNl: "In Dutch",
     supportFr: "In French",
-    supportElsewhere: "Elsewhere: find a helpline in your country.",
+    supportElsewhere: "Find a free helpline in your country, wherever you are.",
     supportSite: "Official service",
     supportAvailabilityTitle: "About the launch",
     supportAvailability:
@@ -332,11 +332,11 @@ export const copy = {
       ],
       [
         "Hugr garde-t-il ce que je dis ?",
-        'L’expérience prévue pour le lancement ne conserve pas de transcription. Entre les échanges, Hugr garde un bref portrait de ce qui a compté pour vous, rédigé avec ses propres mots. Vous pouvez le lire, le modifier ou le supprimer. La politique complète de l’application précisera ce fonctionnement avant la création de votre compte. <button class="inline-link" data-dialog="privacy">En savoir plus sur vos données</button>.',
+        'Oui, pour que vous puissiez reprendre là où vous vous étiez arrêté. Vos conversations restent dans votre historique jusqu’à ce que vous les supprimiez. Hugr retient aussi, avec ses propres mots, ce qui a compté pour vous, et vous pouvez lui en dire plus vous-même dans « In your words ». Réinitialisez sa mémoire et Hugr repart de zéro. La politique de confidentialité de l’application explique tout avant la création de votre compte. <button class="inline-link" data-dialog="privacy">En savoir plus sur vos données</button>.',
       ],
       [
         "Va-t-il me noter ou me coller une étiquette ?",
-        "Pas de courbes d’humeur, de jauges de progression ou de notes. Pas de catégories ni d’étiquettes. Le portrait que Hugr garde reflète ce qui a compté pour vous ; il ne porte jamais de jugement sur qui vous êtes.",
+        "Pas de courbes d’humeur, de jauges de progression ou de notes. Pas de catégories ni d’étiquettes. Ce que Hugr retient reflète ce qui a compté pour vous ; il ne porte jamais de jugement sur qui vous êtes.",
       ],
       [
         "Va-t-il chercher à me rendre accro ?",
@@ -396,10 +396,10 @@ export const copy = {
     supportUrgentTitle: "Si vous avez besoin d’aide maintenant",
     supportUrgent:
       'Hugr n’est pas un service d’urgence et ne peut pas appeler les secours. En cas de danger immédiat dans l’UE, appelez le <a href="tel:112">112</a>.',
-    supportLinesTitle: "Une personne à qui parler en Belgique",
+    supportLinesTitle: "Une personne à qui parler",
     supportNl: "En néerlandais",
     supportFr: "En français",
-    supportElsewhere: "Ailleurs : trouver une ligne d’écoute dans votre pays.",
+    supportElsewhere: "Trouvez une ligne d’écoute gratuite dans votre pays, où que vous soyez.",
     supportSite: "Site officiel",
     supportAvailabilityTitle: "À propos du lancement",
     supportAvailability:
@@ -538,11 +538,11 @@ export const copy = {
       ],
       [
         "Bewaart Hugr wat ik zeg?",
-        'Bij de lancering is het de bedoeling dat Hugr geen transcripties van je gesprekken bewaart. Tussen gesprekken bewaart Hugr in eigen woorden een beknopt beeld van wat voor jou belangrijk is geweest. Je kunt het lezen, aanpassen of verwijderen. Het volledige privacybeleid van de app legt dit uit voordat je een account aanmaakt. <button class="inline-link" data-dialog="privacy">Meer over je gegevens</button>.',
+        'Ja, zodat je verder kunt waar je gebleven was. Je gesprekken blijven in je geschiedenis tot je ze verwijdert. Hugr onthoudt ook, in eigen woorden, wat voor jou belangrijk is geweest, en in ‘In your words’ kun je het zelf meer vertellen. Wis het geheugen en Hugr begint opnieuw bij nul. Het privacybeleid van de app legt alles uit voordat je een account aanmaakt. <button class="inline-link" data-dialog="privacy">Meer over je gegevens</button>.',
       ],
       [
         "Gaat Hugr me beoordelen of een etiket geven?",
-        "Geen stemmingsgrafieken, voortgangsringen of scores. Geen labels, types of categorieën. Het beeld dat Hugr bewaart, gaat over wat voor jou belangrijk is geweest. Het is nooit een oordeel over wie je bent.",
+        "Geen stemmingsgrafieken, voortgangsringen of scores. Geen labels, types of categorieën. Wat Hugr onthoudt, gaat over wat voor jou belangrijk is geweest. Het is nooit een oordeel over wie je bent.",
       ],
       [
         "Probeert Hugr me afhankelijk te maken?",
@@ -602,10 +602,10 @@ export const copy = {
     supportUrgentTitle: "Als je nu hulp nodig hebt",
     supportUrgent:
       'Hugr is geen hulpdienst en kan geen hulp voor je inschakelen. Ben je in direct gevaar in de EU? Bel <a href="tel:112">112</a>.',
-    supportLinesTitle: "Iemand om mee te praten in België",
+    supportLinesTitle: "Iemand om mee te praten",
     supportNl: "In het Nederlands",
     supportFr: "In het Frans",
-    supportElsewhere: "Elders: vind een hulplijn in jouw land.",
+    supportElsewhere: "Vind een gratis hulplijn in je land, waar je ook bent.",
     supportSite: "Officiële website",
     supportAvailabilityTitle: "Over de lancering",
     supportAvailability:
