@@ -142,7 +142,7 @@ export const copy = {
       ],
       [
         "When does it open, and in which languages?",
-        "Soon, on iPhone and Android, for adults aged 18 and over. The app will launch in English; French and Dutch will follow. This website is available in all three languages. Join the waitlist to hear when Hugr is ready in your language.",
+        "Soon, on iPhone and Android, for adults aged 18 and over. Hugr speaks English, French and Dutch. Join the waitlist to hear when it’s ready for you.",
       ],
       [
         "My question isn’t here.",
@@ -197,7 +197,7 @@ export const copy = {
     supportSite: "Official service",
     supportAvailabilityTitle: "About the launch",
     supportAvailability:
-      "The app is not available yet. It is for adults 18 and over. English comes first; French and Dutch follow. The price will be shared before you decide to join.",
+      "The app is not available yet. It is for adults 18 and over. Hugr speaks English, French and Dutch. The price will be shared before you decide to join.",
     supportBrokenTitle: "Something isn’t working?",
     supportBroken:
       "Email the team with your device, operating system and what happened. A screenshot can help.",
@@ -348,7 +348,7 @@ export const copy = {
       ],
       [
         "Quand sort-elle, et dans quelles langues ?",
-        "Bientôt, sur iPhone et Android, pour les adultes de 18 ans et plus. L’application sera d’abord disponible en anglais, puis en français et en néerlandais. Ce site existe dans les trois langues. Rejoignez la liste d’attente pour être informé de l’arrivée de Hugr dans votre langue.",
+        "Bientôt, sur iPhone et Android, pour les adultes de 18 ans et plus. Hugr parle anglais, français et néerlandais. Rejoignez la liste d’attente pour être informé de son arrivée.",
       ],
       [
         "Je n’ai pas trouvé ma réponse.",
@@ -403,7 +403,7 @@ export const copy = {
     supportSite: "Site officiel",
     supportAvailabilityTitle: "À propos du lancement",
     supportAvailability:
-      "L’application n’est pas encore disponible. Elle s’adresse aux adultes de 18 ans et plus. Elle sortira d’abord en anglais, puis en français et en néerlandais. Vous connaîtrez le prix avant de décider de vous abonner.",
+      "L’application n’est pas encore disponible. Elle s’adresse aux adultes de 18 ans et plus. Hugr parle anglais, français et néerlandais. Vous connaîtrez le prix avant de décider de vous abonner.",
     supportBrokenTitle: "Quelque chose ne fonctionne pas ?",
     supportBroken:
       "Écrivez à l’équipe en précisant votre appareil, votre système d’exploitation et ce qui s’est passé. Une capture d’écran peut aider.",
@@ -554,7 +554,7 @@ export const copy = {
       ],
       [
         "Wanneer komt het uit, en in welke talen?",
-        "Binnenkort op iPhone en Android, voor volwassenen vanaf 18 jaar. De app komt eerst in het Engels. Frans en Nederlands volgen. Deze website is al in alle drie de talen beschikbaar. Schrijf je in op de wachtlijst om te horen wanneer Hugr er in jouw taal is.",
+        "Binnenkort op iPhone en Android, voor volwassenen vanaf 18 jaar. Hugr spreekt Engels, Frans en Nederlands. Schrijf je in op de wachtlijst om te horen wanneer het zover is.",
       ],
       [
         "Mijn vraag staat er niet bij.",
@@ -609,7 +609,7 @@ export const copy = {
     supportSite: "Officiële website",
     supportAvailabilityTitle: "Over de lancering",
     supportAvailability:
-      "De app is nog niet beschikbaar. Ze is bedoeld voor volwassenen vanaf 18 jaar. Eerst komt Engels, daarna Frans en Nederlands. Je hoort de prijs voordat je beslist.",
+      "De app is nog niet beschikbaar. Ze is bedoeld voor volwassenen vanaf 18 jaar. Hugr spreekt Engels, Frans en Nederlands. Je hoort de prijs voordat je beslist.",
     supportBrokenTitle: "Werkt er iets niet?",
     supportBroken:
       "Mail het team met je toestel, besturingssysteem en wat er gebeurde. Een schermafbeelding kan helpen.",
