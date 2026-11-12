@@ -73,7 +73,7 @@ footer p{color:var(--muted);margin:4px 0}
 <main class="wrap">
   <h1>Jouw woorden. Jouw keuzes.</h1>
   <p class="lede">Op deze pagina vind je het privacybeleid van Hugr, de gebruiksvoorwaarden van de Hugr-app, hoe je je account verwijdert en hoe je een mens bereikt.</p>
-  <p class="muted">Versie 0.3 · Laatst bijgewerkt op 10 november 2026 · Inlight Comm.V., België</p>
+  <p class="muted">Versie 0.3 · Laatst bijgewerkt op 12 november 2026 · Inlight Comm.V., België</p>
   <nav class="toc" aria-label="Op deze pagina">
     <a href="#support">Support</a>
     <a href="#privacy">Privacybeleid</a>
@@ -116,7 +116,7 @@ footer p{color:var(--muted);margin:4px 0}
     <div class="table"><table>
       <thead><tr><th>Wat</th><th>Waarom</th><th>Rechtsgrond</th><th>Bewaard tot</th></tr></thead>
       <tbody>
-        <tr><td><strong>Account:</strong> je e-mailadres en een wachtwoord, dat we alleen versleuteld (gehasht) opslaan. Meld je je aan met Apple of Google, dan krijgen we het e-mailadres dat zij met ons delen.</td><td>Om je account aan te maken en je aan te melden</td><td>Overeenkomst</td><td>Tot je je account verwijdert</td></tr>
+        <tr><td><strong>Account:</strong> je e-mailadres. Je meldt je aan met een eenmalige code die we je mailen, dus er is geen wachtwoord om te bewaren.</td><td>Om je account aan te maken en je aan te melden</td><td>Overeenkomst</td><td>Tot je je account verwijdert</td></tr>
         <tr><td><strong>Leeftijdsbevestiging:</strong> dat je 18 jaar of ouder bent. Je geboortedatum slaan we niet op.</td><td>Hugr is voor volwassenen</td><td>Overeenkomst: 18 jaar of ouder zijn is een voorwaarde in onze gebruiksvoorwaarden</td><td>Tot je je account verwijdert</td></tr>
         <tr><td><strong>Je toestemming:</strong> wanneer je ze gaf en voor welke versie van dit beleid</td><td>Om te kunnen aantonen dat je akkoord ging</td><td>Wettelijke verplichting</td><td>Zolang je account bestaat, daarna 5 jaar. Alleen de datum, de tekst en de versie blijven bewaard</td></tr>
         <tr><td><strong>Je gesprekken:</strong> wat je aan Hugr schrijft en wat Hugr antwoordt</td><td>Zodat Hugr je kan antwoorden en jij vroegere gesprekken kunt herlezen</td><td>Uitdrukkelijke toestemming, omdat gesprekken gezondheidsinformatie kunnen onthullen (AVG, artikel 9)</td><td>Tot je het gesprek of je account verwijdert</td></tr>
@@ -145,7 +145,7 @@ footer p{color:var(--muted);margin:4px 0}
     <p>We gebruiken je gesprekken niet om een AI-model te trainen. Willen we ooit een eigen model trainen, dan beslissen we dat apart, passen we deze pagina aan en vragen we eerst je uitdrukkelijke toestemming.</p>
 
     <h3>6. Waar je gegevens staan en wie ze nog ziet</h3>
-    <p>Hugr draait op de eigen server van Franc in België. Je berichten worden op je telefoon versleuteld. Ze gaan via een relayserver die we in de EU huren en die ze niet kan openen, en worden pas op onze eigen server geopend.</p>
+    <p>Hugr draait op de eigen server van Franc in België. Je berichten worden op je telefoon versleuteld. Ze gaan via een relayserver die we huren bij Hetzner in Helsinki (Finland). Die relay kan ze niet openen en houdt geen logs bij; ze worden pas op onze eigen server geopend.</p>
     <p>Deze bedrijven verwerken gegevens voor ons, elk alleen in onze opdracht en onder contract:</p>
     <div class="table"><table>
       <thead><tr><th>Wie</th><th>Waarvoor</th><th>Waar</th></tr></thead>
@@ -153,9 +153,11 @@ footer p{color:var(--muted);margin:4px 0}
         <tr><td>Anthropic</td><td>De antwoorden van Hugr schrijven (punt 5)</td><td>Verenigde Staten, onder de modelcontractbepalingen van de EU</td></tr>
         <tr><td>RevenueCat</td><td>Abonnementen beheren: welk abonnement je hebt en of het actief is. Geen gespreksinhoud.</td><td>Verenigde Staten, onder de modelcontractbepalingen van de EU. Het krijgt alleen een willekeurige ID, nooit je e-mailadres</td></tr>
         <tr><td>PostHog (EU-cloud)</td><td>Gebruiksanalyse, alleen met je toestemming. Geen gespreksinhoud.</td><td>EU</td></tr>
-        <tr><td>Onze relayhost</td><td>Versleutelde berichten doorsturen die hij niet kan lezen</td><td>EU</td></tr>
+        <tr><td>Supabase</td><td>Je account en aanmelden: je e-mailadres en de eenmalige codes. Geen inhoud van gesprekken.</td><td>EU (Frankfurt, Duitsland)</td></tr>
+        <tr><td>Resend</td><td>Je aanmeldcodes en e-mails over je account versturen. Geen inhoud van gesprekken.</td><td>Verstuurd vanuit de EU (Ierland). Resend is een Amerikaans bedrijf, onder de EU-modelcontractbepalingen</td></tr>
+        <tr><td>Hetzner Online</td><td>De relayserver verhuren die versleutelde berichten doorstuurt zonder ze te kunnen lezen. Houdt geen logs bij.</td><td>EU (Helsinki, Finland)</td></tr>
         <tr><td>Google (Google Workspace)</td><td>De wachtlijst bijhouden (punt 0)</td><td>EU</td></tr>
-        <tr><td>Apple en Google</td><td>App stores, betalingen en, als je het gebruikt, aanmelden</td><td>Hun eigen voorwaarden gelden</td></tr>
+        <tr><td>Apple en Google</td><td>App stores en betalingen</td><td>Hun eigen voorwaarden gelden</td></tr>
       </tbody>
     </table></div>
     <p>We delen gegevens met niemand anders, tenzij de wet het vereist.</p>
@@ -193,7 +195,7 @@ footer p{color:var(--muted);margin:4px 0}
     <p>Opzeggen stopt de volgende verlenging. Terugbetalingen voor de lopende periode volgen de regels van Apple of Google.</p>
 
     <h3>9. Beveiliging</h3>
-    <p>Je berichten zijn versleuteld van je telefoon tot op onze server. Onze back-ups zijn versleuteld. Alleen wie het nodig heeft om Hugr te laten draaien, heeft toegang tot opgeslagen gegevens. Onze serverlogs houden bij wanneer een verzoek binnenkwam, nooit wat je schreef. De app vergrendelt zich als je 10 minuten weg bent geweest. Je opent hem opnieuw met je wachtwoord, vingerafdruk of gezicht.</p>
+    <p>Je berichten zijn versleuteld van je telefoon tot op onze server. Onze back-ups zijn versleuteld. Alleen wie het nodig heeft om Hugr te laten draaien, heeft toegang tot opgeslagen gegevens. Onze serverlogs houden bij wanneer een verzoek binnenkwam, nooit wat je schreef. De app vergrendelt zich als je 10 minuten weg bent geweest. Je opent hem opnieuw met je gezicht, je vingerafdruk of de code van je telefoon.</p>
 
     <h3>10. Hugr is geen noodhulp</h3>
     <p>Hugr is een gesprekspartner om na te denken. Het is geen medische, psychologische of noodhulpdienst, en het kan geen hulp voor je inroepen. Ben je in gevaar, bel dan <a href="tel:112">112</a> of het noodnummer in je land. Op <a href="https://findahelpline.com" rel="noopener">findahelpline.com</a> vind je gratis hulplijnen per land.</p>
@@ -218,7 +220,7 @@ footer p{color:var(--muted);margin:4px 0}
     <p>Je moet 18 jaar of ouder zijn en met deze voorwaarden kunnen instemmen. Hugr is voor je eigen, persoonlijk gebruik, niet voor zakelijk gebruik of in naam van iemand anders.</p>
 
     <h3>3. Je account</h3>
-    <p>Je meldt je aan met een e-mailadres en wachtwoord, of met Apple of Google. Houd je wachtwoord voor jezelf. De app vergrendelt zich als je 10 minuten weg bent geweest. Je opent hem opnieuw met je gezicht, je vingerafdruk of de code van je telefoon, of met je wachtwoord. Laat het ons weten via <a href="mailto:support@byhugr.io">support@byhugr.io</a> als je denkt dat iemand anders je account gebruikt heeft. Eén account is voor één persoon.</p>
+    <p>Je meldt je aan met je e-mailadres: we sturen je telkens een eenmalige code. Houd de toegang tot die mailbox voor jezelf. De app vergrendelt zich als je 10 minuten weg bent geweest. Je opent hem opnieuw met je gezicht, je vingerafdruk of de code van je telefoon, of met een nieuwe code per e-mail. Laat het ons weten via <a href="mailto:support@byhugr.io">support@byhugr.io</a> als je denkt dat iemand anders je account gebruikt heeft. Eén account is voor één persoon.</p>
 
     <h3>4. Wat Hugr is, en wat niet</h3>
     <p>Hugr is een AI-gesprekspartner om na te denken: een plek om te denken, te schrijven en gehoord te worden. Een AI-model schrijft de antwoorden. Die kunnen fout, onvolledig of niet geschikt voor jou zijn, dus gebruik je eigen oordeel.</p>

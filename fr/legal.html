@@ -73,7 +73,7 @@ footer p{color:var(--muted);margin:4px 0}
 <main class="wrap">
   <h1>Vos mots. Vos choix.</h1>
   <p class="lede">Cette page réunit la politique de confidentialité de Hugr, les conditions d’utilisation de l’app Hugr, la marche à suivre pour supprimer votre compte et le moyen de joindre une personne.</p>
-  <p class="muted">Version 0.3 · Dernière mise à jour le 10 novembre 2026 · Inlight Comm.V., Belgique</p>
+  <p class="muted">Version 0.3 · Dernière mise à jour le 12 novembre 2026 · Inlight Comm.V., Belgique</p>
   <nav class="toc" aria-label="Sur cette page">
     <a href="#support">Support</a>
     <a href="#privacy">Politique de confidentialité</a>
@@ -116,7 +116,7 @@ footer p{color:var(--muted);margin:4px 0}
     <div class="table"><table>
       <thead><tr><th>Quoi</th><th>Pourquoi</th><th>Base légale</th><th>Durée de conservation</th></tr></thead>
       <tbody>
-        <tr><td><strong>Compte&nbsp;:</strong> votre adresse e-mail et un mot de passe, que nous conservons uniquement sous forme brouillée (hachée). Si vous vous connectez avec Apple ou Google, nous recevons l’adresse e-mail qu’ils nous transmettent.</td><td>Pour créer votre compte et vous connecter</td><td>Contrat</td><td>Jusqu’à la suppression de votre compte</td></tr>
+        <tr><td><strong>Compte&nbsp;:</strong> votre adresse e-mail. Vous vous connectez avec un code à usage unique que nous vous envoyons par e-mail&nbsp;: il n’y a donc aucun mot de passe à conserver.</td><td>Pour créer votre compte et vous connecter</td><td>Contrat</td><td>Jusqu’à la suppression de votre compte</td></tr>
         <tr><td><strong>Confirmation d’âge&nbsp;:</strong> le fait que vous avez 18&nbsp;ans ou plus. Nous ne conservons pas votre date de naissance.</td><td>Hugr s’adresse aux adultes</td><td>Contrat&nbsp;: avoir 18&nbsp;ans ou plus est une condition de nos conditions d’utilisation</td><td>Jusqu’à la suppression de votre compte</td></tr>
         <tr><td><strong>Votre consentement&nbsp;:</strong> quand vous l’avez donné et pour quelle version de cette politique</td><td>Pour prouver que vous avez accepté</td><td>Obligation légale</td><td>Tant que votre compte existe, puis 5&nbsp;ans. Seuls la date, le libellé et la version sont conservés</td></tr>
         <tr><td><strong>Vos conversations&nbsp;:</strong> ce que vous écrivez à Hugr et ce que Hugr vous répond</td><td>Pour que Hugr puisse vous répondre, et pour que vous puissiez relire vos conversations passées</td><td>Consentement explicite, car les conversations peuvent révéler des informations de santé (article 9 du RGPD)</td><td>Jusqu’à la suppression de la conversation ou de votre compte</td></tr>
@@ -145,7 +145,7 @@ footer p{color:var(--muted);margin:4px 0}
     <p>Nous n’utilisons pas vos conversations pour entraîner un modèle d’IA. Si nous voulons un jour entraîner notre propre modèle, nous le déciderons séparément, nous mettrons cette page à jour et nous vous demanderons d’abord votre consentement explicite.</p>
 
     <h3>6. Où se trouvent vos données et qui d’autre les voit</h3>
-    <p>Hugr fonctionne sur le propre serveur de Franc, en Belgique. Vos messages sont chiffrés sur votre téléphone. Ils transitent par un serveur relais que nous louons dans l’UE, qui ne peut pas les ouvrir, et ne sont ouverts que sur notre propre serveur.</p>
+    <p>Hugr fonctionne sur le propre serveur de Franc, en Belgique. Vos messages sont chiffrés sur votre téléphone. Ils transitent par un serveur relais que nous louons chez Hetzner, à Helsinki (Finlande). Ce relais ne peut pas les ouvrir et ne conserve aucun journal&nbsp;; ils ne sont ouverts que sur notre propre serveur.</p>
     <p>Ces entreprises traitent des données pour nous, chacune uniquement sur nos instructions et sous contrat&nbsp;:</p>
     <div class="table"><table>
       <thead><tr><th>Qui</th><th>Pour quoi</th><th>Où</th></tr></thead>
@@ -153,9 +153,11 @@ footer p{color:var(--muted);margin:4px 0}
         <tr><td>Anthropic</td><td>Rédiger les réponses de Hugr (section&nbsp;5)</td><td>États-Unis, sous les clauses contractuelles types de l’UE</td></tr>
         <tr><td>RevenueCat</td><td>Gérer les abonnements&nbsp;: quelle formule vous avez et si elle est active. Aucun contenu de conversation.</td><td>États-Unis, sous les clauses contractuelles types de l’UE. RevenueCat reçoit uniquement un identifiant aléatoire, jamais votre adresse e-mail</td></tr>
         <tr><td>PostHog (cloud UE)</td><td>Analyse d’utilisation, uniquement avec votre consentement. Aucun contenu de conversation.</td><td>UE</td></tr>
-        <tr><td>Notre hébergeur relais</td><td>Transmettre des messages chiffrés qu’il ne peut pas lire</td><td>UE</td></tr>
+        <tr><td>Supabase</td><td>Votre compte et votre connexion&nbsp;: votre adresse e-mail et les codes à usage unique. Aucun contenu de conversation.</td><td>UE (Francfort, Allemagne)</td></tr>
+        <tr><td>Resend</td><td>L’envoi de vos codes de connexion et des e-mails concernant votre compte. Aucun contenu de conversation.</td><td>Envoi depuis l’UE (Irlande). Resend est une société américaine, encadrée par les clauses contractuelles types de l’UE</td></tr>
+        <tr><td>Hetzner Online</td><td>La location du serveur relais qui transmet des messages chiffrés qu’il ne peut pas lire. Il ne conserve aucun journal.</td><td>UE (Helsinki, Finlande)</td></tr>
         <tr><td>Google (Google Workspace)</td><td>Conserver la liste d’attente (section&nbsp;0)</td><td>UE</td></tr>
-        <tr><td>Apple et Google</td><td>Stores d’applications, paiements et, si vous l’utilisez, connexion</td><td>Leurs propres conditions s’appliquent</td></tr>
+        <tr><td>Apple et Google</td><td>Stores d’applications et paiements</td><td>Leurs propres conditions s’appliquent</td></tr>
       </tbody>
     </table></div>
     <p>Nous ne partageons de données avec personne d’autre, sauf si la loi l’exige.</p>
@@ -193,7 +195,7 @@ footer p{color:var(--muted);margin:4px 0}
     <p>L’annulation arrête le prochain renouvellement. Les remboursements pour la période en cours suivent les règles d’Apple ou de Google.</p>
 
     <h3>9. Sécurité</h3>
-    <p>Vos messages sont chiffrés de votre téléphone jusqu’à notre serveur. Nos sauvegardes sont chiffrées. Seules les personnes qui en ont besoin pour faire fonctionner Hugr peuvent accéder aux données stockées. Les journaux de notre serveur enregistrent quand une requête est arrivée, jamais ce que vous avez écrit. L’app se verrouille quand vous vous êtes absenté 10&nbsp;minutes. Vous la rouvrez avec votre mot de passe, votre empreinte digitale ou votre visage.</p>
+    <p>Vos messages sont chiffrés de votre téléphone jusqu’à notre serveur. Nos sauvegardes sont chiffrées. Seules les personnes qui en ont besoin pour faire fonctionner Hugr peuvent accéder aux données stockées. Les journaux de notre serveur enregistrent quand une requête est arrivée, jamais ce que vous avez écrit. L’app se verrouille quand vous vous êtes absenté 10&nbsp;minutes. Vous la rouvrez avec votre visage, votre empreinte digitale ou le code de votre téléphone.</p>
 
     <h3>10. Hugr n’est pas un service d’urgence</h3>
     <p>Hugr est un compagnon de réflexion. Ce n’est pas un service médical, psychologique ou d’urgence, et il ne peut pas appeler à l’aide pour vous. Si vous êtes en danger, appelez le <a href="tel:112">112</a> ou le numéro d’urgence local. <a href="https://findahelpline.com" rel="noopener">findahelpline.com</a> répertorie des lignes d’écoute gratuites par pays.</p>
@@ -218,7 +220,7 @@ footer p{color:var(--muted);margin:4px 0}
     <p>Vous devez avoir 18&nbsp;ans ou plus et être en mesure d’accepter ces conditions. Hugr est destiné à votre usage personnel, pas à un usage professionnel ni pour le compte de quelqu’un d’autre.</p>
 
     <h3>3. Votre compte</h3>
-    <p>Vous vous connectez avec une adresse e-mail et un mot de passe, ou avec Apple ou Google. Gardez votre mot de passe pour vous. L’app se verrouille quand vous vous êtes absenté 10&nbsp;minutes. Vous la rouvrez avec votre visage, votre empreinte digitale ou le code de votre téléphone, ou avec votre mot de passe. Prévenez-nous à <a href="mailto:support@byhugr.io">support@byhugr.io</a> si vous pensez que quelqu’un d’autre a utilisé votre compte. Un compte correspond à une seule personne.</p>
+    <p>Vous vous connectez avec votre adresse e-mail&nbsp;: nous vous envoyons à chaque fois un code à usage unique. Gardez l’accès à cette boîte mail pour vous. L’app se verrouille quand vous vous êtes absenté 10&nbsp;minutes. Vous la rouvrez avec votre visage, votre empreinte digitale ou le code de votre téléphone, ou avec un nouveau code reçu par e-mail. Prévenez-nous à <a href="mailto:support@byhugr.io">support@byhugr.io</a> si vous pensez que quelqu’un d’autre a utilisé votre compte. Un compte correspond à une seule personne.</p>
 
     <h3>4. Ce qu’est Hugr, et ce qu’il n’est pas</h3>
     <p>Hugr est un compagnon IA de réflexion&nbsp;: un lieu pour penser, écrire et être accueilli. Ses réponses sont rédigées par un modèle d’IA. Elles peuvent être erronées, incomplètes ou ne pas vous convenir&nbsp;: fiez-vous à votre propre jugement.</p>

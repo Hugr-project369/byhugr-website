@@ -73,7 +73,7 @@ footer p{color:var(--muted);margin:4px 0}
 <main class="wrap">
   <h1>Your words. Your choices.</h1>
   <p class="lede">This page holds Hugr's privacy policy, the terms of use for the Hugr app, how to delete your account, and how to reach a person.</p>
-  <p class="muted">Version 0.3 · Last updated 10 November 2026 · Inlight Comm.V., Belgium</p>
+  <p class="muted">Version 0.3 · Last updated 12 November 2026 · Inlight Comm.V., Belgium</p>
   <nav class="toc" aria-label="On this page">
     <a href="#support">Support</a>
     <a href="#privacy">Privacy policy</a>
@@ -116,7 +116,7 @@ footer p{color:var(--muted);margin:4px 0}
     <div class="table"><table>
       <thead><tr><th>What</th><th>Why</th><th>Legal basis</th><th>Kept for</th></tr></thead>
       <tbody>
-        <tr><td><strong>Account:</strong> your email address and a password, which we store only in scrambled (hashed) form. If you sign in with Apple or Google, we receive the email address they share with us.</td><td>To create your account and sign you in</td><td>Contract</td><td>Until you delete your account</td></tr>
+        <tr><td><strong>Account:</strong> your email address. You sign in with a one-time code we email you, so there is no password to store.</td><td>To create your account and sign you in</td><td>Contract</td><td>Until you delete your account</td></tr>
         <tr><td><strong>Age confirmation:</strong> that you are 18 or older. We do not store your date of birth.</td><td>Hugr is for adults</td><td>Contract: being 18 or older is a condition of our terms</td><td>Until you delete your account</td></tr>
         <tr><td><strong>Your consent:</strong> when you gave it and to which version of this policy</td><td>To prove that you agreed</td><td>Legal obligation</td><td>While your account exists, then 5 years. Only the date, wording and version are kept</td></tr>
         <tr><td><strong>Your conversations:</strong> what you write to Hugr and what Hugr replies</td><td>So Hugr can answer you, and so you can reread past conversations</td><td>Explicit consent, because conversations can reveal health information (GDPR article 9)</td><td>Until you delete the conversation or your account</td></tr>
@@ -145,7 +145,7 @@ footer p{color:var(--muted);margin:4px 0}
     <p>We do not use your conversations to train an AI model. If we ever want to train our own model, we will decide that separately, update this page, and ask for your explicit consent first.</p>
 
     <h3>6. Where your data lives and who else sees it</h3>
-    <p>Hugr runs on Franc's own server in Belgium. Your messages are encrypted on your phone. They pass through a relay server we rent in the EU, which cannot open them, and are opened only on our own server.</p>
+    <p>Hugr runs on Franc's own server in Belgium. Your messages are encrypted on your phone. They pass through a relay server we rent from Hetzner in Helsinki, Finland. The relay cannot open them and keeps no logs; they are opened only on our own server.</p>
     <p>These companies process data for us, each only on our instructions and under contract:</p>
     <div class="table"><table>
       <thead><tr><th>Who</th><th>What for</th><th>Where</th></tr></thead>
@@ -153,9 +153,11 @@ footer p{color:var(--muted);margin:4px 0}
         <tr><td>Anthropic</td><td>Writing Hugr's replies (section 5)</td><td>United States, under the EU standard contractual clauses</td></tr>
         <tr><td>RevenueCat</td><td>Managing subscriptions: which plan you have and whether it is active. No conversation content.</td><td>United States, under the EU standard contractual clauses. It receives only a random ID, never your email address</td></tr>
         <tr><td>PostHog (EU cloud)</td><td>Usage analytics, only with your consent. No conversation content.</td><td>EU</td></tr>
-        <tr><td>Our relay host</td><td>Passing on encrypted messages it cannot read</td><td>EU</td></tr>
+        <tr><td>Supabase</td><td>Your account and sign-in: your email address and the one-time codes. No conversation content.</td><td>EU (Frankfurt, Germany)</td></tr>
+        <tr><td>Resend</td><td>Sending your sign-in codes and emails about your account. No conversation content.</td><td>Sent from the EU (Ireland). Resend is a US company, under the EU standard contractual clauses</td></tr>
+        <tr><td>Hetzner Online</td><td>Renting us the relay server that passes on encrypted messages it cannot read. It keeps no logs.</td><td>EU (Helsinki, Finland)</td></tr>
         <tr><td>Google (Google Workspace)</td><td>Keeping the waitlist (section 0)</td><td>EU</td></tr>
-        <tr><td>Apple and Google</td><td>App stores, payments and, if you use it, sign-in</td><td>Their own terms apply</td></tr>
+        <tr><td>Apple and Google</td><td>App stores and payments</td><td>Their own terms apply</td></tr>
       </tbody>
     </table></div>
     <p>We share data with no one else, unless the law requires it.</p>
@@ -193,7 +195,7 @@ footer p{color:var(--muted);margin:4px 0}
     <p>Cancelling stops the next renewal. Refunds for the current period follow Apple's or Google's rules.</p>
 
     <h3>9. Security</h3>
-    <p>Your messages are encrypted from your phone to our server. Our backups are encrypted. Only the people who need it to run Hugr can reach stored data. Our server logs record when a request came in, never what you wrote. The app locks itself when you have been away for 10 minutes. You open it again with your password, fingerprint or face.</p>
+    <p>Your messages are encrypted from your phone to our server. Our backups are encrypted. Only the people who need it to run Hugr can reach stored data. Our server logs record when a request came in, never what you wrote. The app locks itself when you have been away for 10 minutes. You open it again with your face, fingerprint or phone passcode.</p>
 
     <h3>10. Hugr is not an emergency service</h3>
     <p>Hugr is a companion for reflection. It is not a medical, psychological or emergency service, and it cannot call for help for you. If you are in danger, call <a href="tel:112">112</a> or your local emergency number. <a href="https://findahelpline.com" rel="noopener">findahelpline.com</a> lists free helplines by country.</p>
@@ -218,7 +220,7 @@ footer p{color:var(--muted);margin:4px 0}
     <p>You must be 18 or older and able to agree to these terms. Hugr is for your own personal use, not for business use or on behalf of someone else.</p>
 
     <h3>3. Your account</h3>
-    <p>You sign in with an email address and password, or with Apple or Google. Keep your password to yourself. The app locks itself when you have been away for 10 minutes. You open it again with your face, fingerprint or phone passcode, or with your password. Tell us at <a href="mailto:support@byhugr.io">support@byhugr.io</a> if you think someone else has used your account. One account is for one person.</p>
+    <p>You sign in with your email address: we send you a one-time code each time. Keep access to that mailbox to yourself. The app locks itself when you have been away for 10 minutes. You open it again with your face, fingerprint or phone passcode, or with a new code by email. Tell us at <a href="mailto:support@byhugr.io">support@byhugr.io</a> if you think someone else has used your account. One account is for one person.</p>
 
     <h3>4. What Hugr is, and what it is not</h3>
     <p>Hugr is an AI companion for reflection: a place to think, write and be met. An AI model writes its replies. They can be wrong, incomplete or not right for you, so use your own judgement.</p>
