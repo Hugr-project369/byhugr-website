@@ -1,13 +1,13 @@
 # Cloudflare Pages response headers for the hugr site.
-# The privacy policy says the site loads no third-party content.
+# The only outside services allowed: the Google waitlist script and PostHog EU (cookieless analytics).
 # The Content-Security-Policy below makes the browser enforce that, not just trust it.
 #
 # connect-src lists both Google hosts on purpose: the Apps Script /exec URL
 # answers with a redirect to script.googleusercontent.com, so the waitlist post
-# needs both. Nothing else is allowed out.
+# needs both. PostHog EU loads its script from eu-assets and receives events on eu.i. Nothing else is allowed out.
 /*
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://eu-assets.i.posthog.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://eu.i.posthog.com https://eu-assets.i.posthog.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'

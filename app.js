@@ -302,6 +302,7 @@ function renderDialog(kind) {
         body: JSON.stringify(data),
       })
         .then(() => {
+          if (window.posthog) window.posthog.capture("waitlist_signup");
           const intro = dialog.querySelector(".waitlist-intro");
           if (intro) {
             intro.classList.add("is-confirmed");
